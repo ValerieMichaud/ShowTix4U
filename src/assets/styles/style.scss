@@ -1,0 +1,35 @@
+//
+// _style
+//
+// Default file to import the different modules of the UI.
+// ********************************************************************************************************************************
+
+
+// Vendors Utilities
+// *************************************
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../node_modules/bootstrap/scss/utilities/display";
+@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+
+
+
+// Core
+// *************************************
+@import "vendors/normalize";
+@import "core/variables";
+@import "core/mixins";
+@import "core/extends";
+@import "core/functions";
+@import "core/fx";
+
+
+
+// Modules
+// *************************************
+@import "modules/modules";
+
+
+
+// Keep it at the bottom so we can override classes
+@import "core/helpers";

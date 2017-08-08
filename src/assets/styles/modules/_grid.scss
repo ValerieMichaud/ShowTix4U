@@ -1,0 +1,40 @@
+//
+// _grid
+//
+// Setups the default grid system (Uses Bootstrap 4's predefined and semantic grid)
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+// Sets the number of column for the predefined grid system (Default: 12)
+$grid-columns: 12;
+
+// Sets the gutter (in padding) between the grid columns (Default: 30px)
+//$grid-gutter-width-base: 30px;
+
+// Sets the list of media queries breakpoints
+$grid-breakpoints: $ui-breakpoints;
+$container-max-widths: $ui-container-max-widths;
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+// Reset container background
+.#{$namespace}ui {
+	.container {
+		background:transparent;
+		overflow:visible;
+	}
+}
+
+
+// Themes
+// *************************************
+
+
+
+// Functions
+// *************************************
+
+

@@ -1,0 +1,51 @@
+//
+// _filters
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+
+// Base
+// *************************************
+.#{$namespace}filters {
+	ul {
+		@extend %bulletless;
+		margin:20px 0;
+		li {
+			margin:0 10px;
+			&:first-child {margin-left:0;}
+			&:last-child {margin-right:0;}
+			a {
+				display:block;
+				padding:5px 10px;
+				text-decoration:none;
+				color:$ui-text-color;
+				&.is-active {
+					background:map-get($ui-colors,primary);
+					color:#fff;
+				}
+			}
+		}
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			overflow-x:auto;
+		}
+	}
+}
+
+
+// Themes
+// *************************************
+
+.#{$namespace}no-filters-categories{
+	padding-top: 40px;
+}
+
+// Functions
+// *************************************
+
+

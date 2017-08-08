@@ -1,0 +1,15 @@
+//
+// _icons
+//
+//
+// ********************************************************************************************************************************
+
+/* TODO Conditional import doesn't work with SASS */
+/*@if ($has-font-awesome){*/
+//@import "../../../../node_modules/font-awesome/scss/font-awesome";
+/*}*/
+
+svg.#{$namespace}icon {
+	overflow: hidden;
+	display: inline-block;
+}

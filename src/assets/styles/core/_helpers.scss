@@ -1,0 +1,256 @@
+//
+// _helpers
+//
+// Utilities classes used to tweak elements on-the-fly (clearfixes, spacers, new widths, colors, floaters, displays, show/hide, etc.)
+// The helper classes will always overwrite any other classes with the !important flag.
+// ********************************************************************************************************************************
+
+
+/* Clearfix */
+.#{$namespace}clearfix {
+	@extend %clearfix;
+}
+/* Reversed */
+.#{$namespace}reversed {
+	@extend %reversed;
+}
+
+
+//@mixin do-helper-variant($helper-name: "", $helper-name-count: 1, $helper-count: 10, $helper-unit: 0, $helper-property: null, $helper-important: !important){
+//	@if($helper-name-count <= 0){$helper-name-count: 1;}
+//
+//	@for $i from 1 through $helper-count {
+//		.#{$helper-name}-#{$i*$helper-name-count} {
+//			#{$helper-property}: ($helper-unit) * $i ($helper-important);
+//		}
+//	}
+//}
+//
+//@include do-helper-variant($helper-name: "#{$namespace}spacer", $helper-name-count: 5, $helper-unit: 0.25em, $helper-property: padding, $helper-important: 0 );
+
+
+.#{$namespace}padder {
+	padding: $grid-gutter-width-base;
+}
+
+
+// Actors (activators, enablers, behavior switch, display switch, etc.)
+// **************************************************************************************
+/* Floats */
+.#{$namespace}to-float-left 	{float: left !important;}
+.#{$namespace}to-float-right 	{float: right !important;}
+.#{$namespace}to-float-none 	{float: none !important;}
+@each $breakpoint, $breakpoint-value in $ui-breakpoints {
+	@include media-breakpoint-up($breakpoint) {
+		.#{$namespace}to-float-none-up-#{$breakpoint} {float: none !important;}
+	}
+	@include media-breakpoint-down($breakpoint) {
+		.#{$namespace}to-float-none-down-#{$breakpoint} {float: none !important;}
+	}
+	@include media-breakpoint-only($breakpoint) {
+		.#{$namespace}to-float-none-only-#{$breakpoint} {float: none !important;}
+	}
+}
+
+
+/* Margins */
+@mixin do-margin-auto-helpers() {
+	@each $index in $direction {
+		.#{$namespace}to-margin-#{$index}-auto {
+			margin-#{$index}:auto;
+		}
+	}
+}
+
+// Directions
+$direction: ('top', 'right', 'bottom', 'left') !default;
+
+// Margins
+@include do-margin-auto-helpers();
+
+
+/* Spacings */
+@mixin do-spacing-helpers($property, $property-direction, $property-unit, $class-slug, $list) {
+	@each $index in $list {
+		.#{$class-slug}#{$property-direction}-#{nth($index, 1)} {
+			#{$property}-#{$property-direction}: #{nth($index, 1)}#{$property-unit} !important;
+		}
+	}
+}
+@mixin do-margin-padding-helpers($property,$property-unit, $class-slug, $list) {
+	@each $index in $list {
+		.#{$class-slug}#{nth($index, 1)} {
+			#{$property}: #{nth($index, 1)}#{$property-unit} !important;
+		}
+	}
+}
+
+// Spacings variations/steps (currently the same for margins and paddings)
+$spacing-steps: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
+
+// Margins
+@include do-spacing-helpers("margin", top, 		px, '#{$namespace}to-margin-', $spacing-steps);
+@include do-spacing-helpers("margin", right, 	px, '#{$namespace}to-margin-', $spacing-steps);
+@include do-spacing-helpers("margin", bottom, 	px, '#{$namespace}to-margin-', $spacing-steps);
+@include do-spacing-helpers("margin", left, 	px, '#{$namespace}to-margin-', $spacing-steps);
+@include do-margin-padding-helpers("margin", px, '#{$namespace}to-margin-', $spacing-steps);
+
+
+// Paddings
+@include do-spacing-helpers("padding", top, 	px, '#{$namespace}to-padding-', $spacing-steps);
+@include do-spacing-helpers("padding", right, 	px, '#{$namespace}to-padding-', $spacing-steps);
+@include do-spacing-helpers("padding", bottom, 	px, '#{$namespace}to-padding-', $spacing-steps);
+@include do-spacing-helpers("padding", left, 	px, '#{$namespace}to-padding-', $spacing-steps);
+@include do-margin-padding-helpers("padding", px, '#{$namespace}to-padding-', $spacing-steps);
+
+//$left-space-vars: (0 left, 5 left, 10 left, 15 left, 20 left, 25 left, 30 left, 35 left, 40 left, 45 left, 50 left);
+//$right-space-vars: (0 right, 5 right, 10 right, 15 right, 20 right, 25 right, 30 right, 35 right, 40 right, 45 right, 50 right);
+//$bottom-space-vars: (0 bottom, 5 bottom, 10 bottom, 15 bottom, 20 bottom, 25 bottom, 30 bottom, 35 bottom, 40 bottom, 45 bottom, 50 bottom);
+//$top-space-vars: (0 top, 5 top, 10 top, 15 top, 20 top, 25 top, 30 top, 35 top, 40 top, 45 top, 50 top);
+
+/* Static spacers - TBO */
+@mixin do-static-spacers-helpers($spacer-name: "", $spacer-count: 10, $spacer-max: 0, $spacer-type: padding){
+	@for $i from 1 through $spacer-count {
+		.#{$spacer-name}-#{$i} 	{
+			#{$spacer-type}: ($spacer-max / $spacer-count) * $i 0;
+		}
+	}
+}
+@include do-static-spacers-helpers($spacer-name: "#{$namespace}spacer", $spacer-max: 2.5em);
+
+/* Widths - TBO */
+@mixin do-widths-helpers($widths-name: "", $widths-count: 10, $widths-max: 100%, $widths-type: width){
+	@for $i from 1 through $widths-count {
+		.#{$widths-name}-#{$i}0 {
+			#{$widths-type}: ($widths-max / $widths-count) * $i !important;
+		}
+	}
+}
+@include do-widths-helpers($widths-name: "#{$namespace}to-width");
+.#{$namespace}to-width-auto {width: auto !important;}
+
+/* Fonts sizes and colors */
+@mixin do-fonts-helpers($class-slug, $list, $property){
+	@each $key, $value in $list {
+		.#{$class-slug}-#{$key} {
+			#{$property}: #{$value} !important;
+		}
+	}
+}
+@include do-fonts-helpers("#{$namespace}to-font-size", $ui-font-sizes, font-size);
+@include do-fonts-helpers("#{$namespace}to-color", $ui-colors, color);
+
+
+/* Text formatting */
+.#{$namespace}to-align-left 		{text-align: left !important;}
+.#{$namespace}to-align-center 		{text-align: center !important;} // .#{$namespace}to-align-center div[class*="#{$namespace}width-"] {margin-left: auto; margin-right: auto;}
+.#{$namespace}to-align-right 		{text-align: right !important;}
+.#{$namespace}to-align-justify 		{text-align: justify !important;}
+.#{$namespace}to-text-uppercase 	{text-transform: uppercase;}
+.#{$namespace}to-text-lowercase 	{text-transform: lowercase;}
+.#{$namespace}to-text-capitalize 	{text-transform: capitalize;}
+.#{$namespace}to-text-ellipsis 		{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;} // <- Applied element requires a specified width
+
+/* Positions */
+.#{$namespace}to-position-static 	{position: static !important;}
+.#{$namespace}to-position-relative 	{position: relative !important;}
+.#{$namespace}to-position-absolute 	{position: absolute !important;}
+.#{$namespace}to-position-fixed 	{position: fixed !important;}
+.#{$namespace}to-position-sticky 	{position: sticky; position:-webkit-sticky;}
+
+/* Displays */
+.#{$namespace}to-display-inline 		{display: inline !important;}
+.#{$namespace}to-display-inline-block 	{display: inline-block !important;}
+.#{$namespace}to-display-block 			{display: block !important;}
+.#{$namespace}to-display-table 			{display: table !important;}
+
+/* Offscreens */
+.#{$namespace}to-offscreen 	{
+	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+.#{$namespace}to-onscreen 	{position: relative !important; right: auto !important;}
+
+
+
+// Resetters (zeroing, removals, disablers, resets, etc.)
+// **************************************************************************************
+.#{$namespace}no-border-top		{border-top: 0 !important;}
+.#{$namespace}no-border-right	{border-right: 0 !important;}
+.#{$namespace}no-border-bottom	{border-bottom: 0 !important;}
+.#{$namespace}no-border-left 	{border-left: 0 !important;}
+.#{$namespace}no-border 		{border: 0 !important;}
+
+.#{$namespace}no-padding-top 	{padding-top: 0 !important;}
+.#{$namespace}no-padding-right 	{padding-right: 0 !important;}
+.#{$namespace}no-padding-bottom	{padding-bottom: 0 !important;}
+.#{$namespace}no-padding-left 	{padding-left: 0 !important;}
+.#{$namespace}no-padding		{padding: 0 !important;}
+
+.#{$namespace}no-margin-top 	{margin-top: 0 !important;}
+.#{$namespace}no-margin-right 	{margin-right: 0 !important;}
+.#{$namespace}no-margin-bottom 	{margin-bottom: 0 !important;}
+.#{$namespace}no-margin-left 	{margin-left: 0 !important;}
+.#{$namespace}no-margin 		{margin: 0 !important;}
+
+.#{$namespace}no-radius 		{border-radius: 0 !important;}
+
+.#{$namespace}reset-width 		{width: auto !important; min-width: 0 !important; max-width: 0 !important;} // needs testing in real context
+
+// no-bullet : Removes bullets from unordered list
+// Apply helper class to ul or li
+
+.#{$namespace}no-bullet > li, li.#{$namespace}no-bullet {padding-left: 0 !important; list-style:none;}
+.#{$namespace}no-bullet > li:before, li.#{$namespace}no-bullet:before {display: none !important;}
+
+.#{$namespace}disabled {color: #999 !important; cursor: default !important;
+ 	> a, > button, > input {}
+}
+
+
+
+// Misc.
+// **************************************************************************************
+/* Show/hide - keep this at the end */
+@each $break in map-keys($ui-breakpoints) {
+	@include media-breakpoint-down($break) {
+		.#{$namespace}to-hide-#{$break} {display: none !important;}
+	};
+}
+
+.#{$namespace}to-show 				{display: block;}
+.#{$namespace}to-show-inline 		{display: inline;}
+.#{$namespace}to-hide 				{display: none;}
+
+.#{$namespace}to-force-show 		{display: block !important;}
+.#{$namespace}to-force-show-inline 	{display: inline !important;}
+.#{$namespace}to-force-hide 		{display: none !important;}
+
+
+
+// hide :
+// hide classes per breakpoint (up/down)
+@each $breakpoint, $breakpoint-value in $ui-breakpoints {
+	@include media-breakpoint-up($breakpoint) {
+		.#{$namespace}hide-up-#{$breakpoint} {display: none !important;}
+	}
+	@include media-breakpoint-down($breakpoint) {
+		.#{$namespace}hide-down-#{$breakpoint} {display: none !important;}
+	}
+	@include media-breakpoint-only($breakpoint) {
+		.#{$namespace}hide-only-#{$breakpoint} {display: none !important;}
+	}
+	
+	@if ($breakpoint == 'xs' or $breakpoint == 'xl') {
+		.#{$namespace}hide {display: none;}
+		.#{$namespace}force-hide {display: none !important;}
+	}
+}
+
+
+.#{$namespace}responsive {
+	width:100%;
+	height:auto;
+}

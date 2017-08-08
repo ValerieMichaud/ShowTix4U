@@ -1,0 +1,112 @@
+//
+// _button
+//
+// Default button styles
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+$button-hp: 10px !default; // Left/Right paddings
+$button-vp: 15px !default; // Top/Bottom paddings
+
+
+
+// Base
+// *************************************
+.#{$namespace}button {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	line-height: normal;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	padding: $button-hp $button-vp;
+	color: #fff;
+	border:0;
+	border-radius:5px;
+
+	@include do-fx(
+		background-color 0.25s linear
+	);
+}
+
+a.#{$namespace}button {
+	text-decoration: none;
+}
+
+
+
+// Themes
+// *************************************
+.#{$namespace}button-outline {
+	border:2px solid #fff;
+}
+.#{$namespace}button-outline-b {
+	border-color:$ui-text-color;
+	color:$ui-text-color;
+}
+
+.#{$namespace}button-secondary {
+	background-color:map-get($ui-colors, secondary);
+	&:hover {
+		background-color: lighten(map-get($ui-colors, secondary), 5% );
+	}
+}
+
+
+// Functions
+// *************************************
+// Button full : Full width buttons
+.#{$namespace}button-full {
+	display: block;
+	width: 100%;
+}
+
+// Button primes : Larger padding buttons
+.#{$namespace}button-prime {
+	padding: $button-hp*2 $button-vp*2;
+}
+
+// Button mini : Smaller padding buttons
+.#{$namespace}button-mini {
+	padding: $button-hp/2 $button-vp/2;
+}
+
+// Button with SVG icon
+.#{$namespace}button-has-svg-icon {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	.#{$namespace}icon {
+		width:25px;
+		height:25px;
+	}
+}
+
+
+// Other
+// *************************************
+.#{$namespace}button-group {
+	> .#{$namespace}button {
+		float: left;
+	}
+	@extend %clearfix;
+}
+
+
+// Make button full from X breakpoints
+@mixin do-button-full($breakpoints: $grid-breakpoints) {
+	@each $breakpoint in map-keys($breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			.#{$namespace}button-full-#{$breakpoint} {width:100%;}
+		}
+	}
+}
+@include do-button-full();
+
+
+

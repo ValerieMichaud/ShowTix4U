@@ -1,0 +1,71 @@
+//
+// _box
+//
+// Basic styles for a generic box (content container)
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+
+// Base
+// *************************************
+.#{$namespace}box {
+	position: relative;
+	display: block;
+	background:#fff;
+	margin-bottom:$grid-gutter-width-base;
+	.#{$namespace}badge {
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	a {text-decoration:none;}
+}
+
+.#{$namespace}box-header {
+	max-height:250px;
+	overflow:hidden;
+}
+
+.#{$namespace}box-title {
+	margin:0;
+	padding-bottom:10px;
+	font-size: inherit;
+	font-weight: normal;
+	color:$ui-text-color;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.#{$namespace}box-body {
+	p {
+		margin:0;
+		font-size:14px;
+		color:$ui-text-color;
+		a{ color:$ui-text-color; }
+	}
+}
+
+.#{$namespace}box-footer {
+	
+}
+.#{$namespace}box-content{
+
+}
+// Themes
+// *************************************
+.#{$namespace}no-box-content{
+	.#{$namespace}box-content{
+		display:none;
+	}	
+}	
+
+
+// Functions
+// *************************************
+
+

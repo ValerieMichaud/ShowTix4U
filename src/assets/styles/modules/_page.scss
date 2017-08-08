@@ -1,0 +1,84 @@
+//
+// _page
+//
+// Default styles for a page (body styles, headings, etc.)
+// ********************************************************************************************************************************
+@import "../../../../node_modules/bootstrap/scss/mixins/grid";
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+html { @include prefixer(box-sizing, border-box, webkit moz spec); }
+*, *:before, *:after { @include prefixer(box-sizing, inherit, webkit moz spec); }
+
+body {
+	font-size: $ui-font-base-size;
+	font-family: $ui-font-family;
+}
+
+ul {
+	> li {
+
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+blockquote {}
+
+sup {}
+
+img {}
+
+
+// Buttons
+button {
+	background:none;
+	border:none;
+}
+
+
+.#{$namespace}page-wrap {
+	@include make-container();
+	@include make-container-max-widths();
+	//position:inherit;
+}
+.#{$namespace}page-header {
+	position:relative;
+}
+.#{$namespace}page-body {}
+.#{$namespace}page-content {
+	position:relative;
+}
+
+.#{$namespace}page-footer {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+// Themes
+// *************************************
+
+.#{$namespace}no-filters-categories{
+	padding-top: 40px;
+}
+
+
+.#{$namespace}entry-content{
+	padding-bottom: 10px;
+	a{
+		color: map-get( $ui-colors, contentlink );
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	p{
+		margin: 0 0 15px;
+	}
+}

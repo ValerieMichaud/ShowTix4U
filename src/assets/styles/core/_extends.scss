@@ -1,0 +1,31 @@
+//
+// _extends
+//
+// Extensions and placeholder classes
+// ********************************************************************************************************************************
+
+
+// Default clearer class for floated elements
+%clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// Flips/mirrors an element
+%reversed {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+// Removes bullets from lists
+%bulletless {
+	padding-left: 0; 
+	list-style: none;
+}

@@ -1,0 +1,69 @@
+//
+// _modal
+//
+// 
+// ********************************************************************************************************************************
+
+@import "../vendors/bootstrap/modal";
+
+.#{$namespace}ui .modal {
+	.modal-dialog {
+		@include transition-property(transform, opacity);
+		@include transition-duration(0.4s);
+		@include transition-timing-function(ease-out); 
+	}
+	&.in {
+		.modal-dialog {}
+	}
+	&.absolute {position:absolute;}
+	&.slideRight {
+		.modal-dialog {opacity:0; transform:translate(25%, 0);}
+		&.in {
+			.modal-dialog {opacity:1; transform:translate(0, 0);}
+		}
+	}
+	&.slideLeft {
+		.modal-dialog {opacity:0; transform:translate(-25%, 0);}
+		&.in {
+			.modal-dialog {opacity:1; transform:translate(0, 0);}
+		}
+	}
+	&.slideDown {
+		.modal-dialog {opacity:0; transform:translate(0, -25%);}
+		&.in {
+			.modal-dialog {opacity:1; transform:translate(0, 0);}
+		}
+	}
+	&.fadeIn {
+		.modal-dialog {opacity:0;}
+		&.in {
+			.modal-dialog {opacity:1;}
+		}
+	}
+	&.pop {
+		.modal-dialog {transform:scale(0);}
+		&.in {
+			.modal-dialog {transform:scale(1);}
+		}
+	}
+	
+	.modal-body {max-height: calc(100vh - 210px); overflow-y: auto;}
+}
+
+
+@include media-breakpoint-down(md) {
+	.#{$namespace}ui .modal {
+		.modal-dialog {width:auto !important; margin-top:10px !important;}
+	}
+}
+
+/* custom scrollbars */
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 7px;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

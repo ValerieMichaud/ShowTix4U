@@ -1,0 +1,131 @@
+//
+// _tooltip + popover from Bell Flush
+//
+// 
+// ********************************************************************************************************************************
+
+/* =fui-popover */
+.fui-popover {
+	position: absolute;
+	display: none;
+	top: 0;
+	min-width: 145px;
+	z-index: 10;
+
+	/* skin */
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	outline: none;
+}
+
+.fui-popover-body {padding: 1px;}
+
+/* arrow */
+.fui-popover-arrow,
+.fui-popover-arrow:after {
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+
+	/* skin */
+	border-width: 13px;
+}
+	.fui-popover-arrow:after {content: "";}
+
+	/* arrow directions */
+	.fui-popover.bottom .fui-popover-arrow,
+	.fui-popover.bottom .fui-popover-arrow:after,
+	.fui-popover.top .fui-popover-arrow,
+	.fui-popover.top .fui-popover-arrow:after {
+		left: 50%;
+		margin-left: -13px;
+	}
+	.fui-popover.right .fui-popover-arrow,
+	.fui-popover.right .fui-popover-arrow:after,
+	.fui-popover.left .fui-popover-arrow,
+	.fui-popover.left .fui-popover-arrow:after {
+		top: 50%;
+		margin-top: -13px;
+	}
+
+	/* arrow pointing down */
+	.fui-popover.top .fui-popover-arrow {
+		border-bottom-width: 0;
+		border-top-color: #ccc;
+		bottom: -13px;
+	}
+	.fui-popover.top .fui-popover-arrow:after {
+		border-bottom-width: 0;
+		border-top-color: #fff;
+		bottom: 1px;
+	}
+
+	/* arrow pointing up */
+	.fui-popover.bottom .fui-popover-arrow {
+		border-top-width: 0;
+		border-bottom-color: #ccc;
+		top: -13px;
+	}
+	.fui-popover.bottom .fui-popover-arrow:after {
+		border-top-width: 0;
+		border-bottom-color: #fff;
+		top: 1px;
+	}
+
+	/* arrow pointing left */
+	.fui-popover.right .fui-popover-arrow {
+		border-left-width: 0;
+		border-right-color: #ccc;
+		left: -13px;
+	}
+	.fui-popover.right .fui-popover-arrow:after {
+		border-left-width: 0;
+		border-right-color: #fff;
+		left: 1px;
+		bottom: -13px;
+	}
+
+	/* arrow pointing right */
+	.fui-popover.left .fui-popover-arrow {
+		border-right-width: 0;
+		border-left-color: #ccc;
+		right: -13px;
+	}
+	.fui-popover.left .fui-popover-arrow:after {
+		border-right-width: 0;
+		border-left-color: #fff;
+		right: 1px;
+		bottom: -13px;
+	}
+
+	/* themes */
+	.fui-popover-a {
+		color: #555;
+		border-color: #ababab;
+		background-color: #f2f2f2;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 0 0 1px #fff inset;
+	}
+		.fui-popover-a.top .fui-popover-arrow {border-top-color: #ababab;}
+		.fui-popover-a.top .fui-popover-arrow:after {border-top-color: #f2f2f2;}
+		.fui-popover-a.bottom .fui-popover-arrow {border-bottom-color: #ababab;}
+		.fui-popover-a.bottom .fui-popover-arrow:after {border-bottom-color: #f2f2f2;}
+		.fui-popover-a.right .fui-popover-arrow {border-right-color: #ababab;}
+		.fui-popover-a.right .fui-popover-arrow:after {border-right-color: #f2f2f2;}
+		.fui-popover-a.left .fui-popover-arrow {border-left-color: #ababab;}
+		.fui-popover-a.left .fui-popover-arrow:after {border-left-color: #f2f2f2;}
+
+	.fui-popover-b {
+		width: 250px;
+		box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+	}
+
+/* tooltip */
+.fui-tooltip {
+	max-width: 400px;
+	outline: none;
+}

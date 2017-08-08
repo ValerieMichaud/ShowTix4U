@@ -1,0 +1,37 @@
+//
+// _comments
+//
+// Basic styles for a generic comments (content container)
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+
+// Base
+// *************************************
+.#{$namespace}comments {
+	.#{$namespace}comment-title{
+		font-weight:lighter;
+	}
+	.#{$namespace}form-body{
+		textarea{
+			&.#{$namespace}form-control{
+				font-size: rem(15);
+				line-height: rem(15);
+			}
+		}
+	}
+	.form-submit{
+		.#{$namespace}button{
+			background-color: map-get($ui-colors, white); 
+			border: 1px solid map-get($ui-colors, black);
+			color: map-get($ui-colors, black);
+			font-size: rem(15);
+			line-height: rem(15);
+		}
+	}
+}

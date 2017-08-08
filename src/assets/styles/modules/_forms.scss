@@ -1,0 +1,229 @@
+//
+// _forms
+//
+// Basic styles for form elements and custom form elements
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+$form-error-color : #B91E1E;
+$form-error-font-size: 12;
+$form-error-border-size: 2px;
+
+
+
+// Base
+// *************************************
+.#{$namespace}form {
+	clear:both;
+	> .#{$namespace}form-header {
+		display:block;
+		margin-bottom:5px;
+		font-weight:bold;
+	}
+	> .#{$namespace}form-body { display:block; width: 100%;
+		&:after {clear:both; content:''; display:block;}
+	}
+	&.#{$namespace}form-error {
+		> .#{$namespace}form-header {color:$form-error-color;}
+		> .#{$namespace}form-body {
+			input, textarea, select {border:$form-error-border-size solid $form-error-color}
+			.#{$namespace}custom-checkbox {
+				.#{$namespace}checkbox-input-custom{ border:$form-error-border-size solid $form-error-color!important; }
+			}
+		}
+	}
+}
+.#{$namespace}form-error-message {display:block; width:100%; clear:both; padding-top:5px; font-size:rem($form-error-font-size); color:$form-error-color;}
+.#{$namespace}note {
+	margin: 0;
+	font-size: rem(13);
+	color: #999;
+}
+			
+// Input Text
+// *************************************
+.#{$namespace}form-text {
+	input {
+		padding: 10px 10px 6px;
+		color: #212121;
+		background-color: #f3f3f3;
+		border: 1px solid #ccc;
+		box-shadow: 0 1px 0 0 rgba(0,0,0,.4) inset;
+		border-radius: 3px;
+		vertical-align: middle;
+		width:100%;
+	}
+	textarea {
+		padding: 10px 10px 6px;
+		color: #212121;
+		background-color: #f3f3f3;
+		border: 1px solid #ccc;
+		box-shadow: 0 1px 0 0 rgba(0,0,0,.4) inset;
+		border-radius: 3px;
+		vertical-align: middle;
+		width:100%;
+	}
+}
+
+// Select
+// *************************************
+.#{$namespace}form-select-custom {
+	.#{$namespace}input-select {
+		display: inline-block;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		select {
+			padding: 5px 40px 5px 8px;
+			border: none;
+			box-shadow: none;
+			background-color: transparent;
+			background-image: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+	}
+}
+.arrow {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 0;
+	width: 0;
+	border-color: #000;
+	&.down {
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid #000;
+	}
+	&.up {
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid #000;
+	}
+}
+
+// Radio
+// *************************************
+.#{$namespace}input-radio, .#{$namespace}input-checkbox {
+	position: relative;
+	float: left;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.#{$namespace}form-radio-custom, .#{$namespace}form-checkbox-custom {
+	.#{$namespace}input-radio, .#{$namespace}input-checkbox {
+		input {@extend .#{$namespace}to-offscreen;}
+		&:before {
+			position: relative;
+			content: "";
+			z-index: 1;
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border: 1px solid #ccc;
+			background-color: #fff;
+			border-radius: 50%;
+		}
+	}
+	.#{$namespace}input-radio {
+		&.#{$namespace}active {
+			&:after {
+				position: absolute;
+				content: "";
+				left: 5px;
+				top: 5px;
+				z-index: 2;
+				display: inline-block;
+				width: 5px;
+				height: 5px;
+				border: 1px solid #000;
+				background-color: #000;
+				border-radius: 50%;
+			}
+		}
+	}
+	.#{$namespace}input-checkbox {
+		&:before {border-radius:0;}
+		&.#{$namespace}active {
+			&:after {
+				position: absolute;
+				content: "\2713";
+				z-index: 2;
+				display: inline-block;
+				left: 3px;
+				top: 0;
+			}
+		}
+		&.#{$namespace}focus {
+			&:before {border:1px solid #0FBB50}
+		}
+	}
+	&.#{$namespace}form-float-right {
+		.#{$namespace}input-radio, .#{$namespace}input-checkbox {
+			&:before {float:right;}
+			&:after {left:auto; right:5px;}
+		}
+	}
+}
+input[type=checkbox]:focus + span {
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+.#{$namespace}form-body{
+	padding: 10px 0;
+	width: 100%;
+	label { display: inline-block; max-width: 100%; margin-bottom: 5px; font-weight: 700; }
+	.#{$namespace}form-control { 
+		display: block; 
+		width: 100%; 
+		height: 34px; 
+		padding: 20px 15px; 
+		font-size: rem(19);
+		line-height: 1.42857143; 
+		color: map-get($ui-colors, 10); 
+		background-color: map-get($ui-colors, white); 
+		background-image: none; 
+		border: 1px solid map-get($ui-colors, 5);
+		border-radius: 4px; 
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		-webkit-transition: border-color ease-in-out .15s,
+		-webkit-box-shadow ease-in-out .15s; 
+		-o-transition: border-color ease-in-out .15s,
+		box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,
+		box-shadow ease-in-out .15s;
+	}
+	textarea{
+		&.#{$namespace}form-control{
+			height: auto; 
+		}
+	}
+}
+
+
+// Themes
+// *************************************
+
+
+// Functions
+// *************************************
+
+
+//
+// Custom CheckBox
+// *************************************
+.#{$namespace}custom-checkbox {font-size:rem(16);
+	.#{$namespace}checkbox-input-custom {margin-bottom:-5px; height:26px; width:26px; border: none; background: map-get($ui-colors,8); display:inline-block;}
+	input[type=checkbox]:checked ~ .#{$namespace}checkbox-input-custom:after {position:absolute; content:'\2714'; color:#000; left:5px; top:-1px;}
+	input[type=checkbox]:checked ~ .#{$namespace}checkbox-input-custom {}
+	input[type=checkbox]{display:none;}
+}

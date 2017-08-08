@@ -1,0 +1,79 @@
+//
+// _social
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+$icon-size:	32px;
+$socials: (
+	facebook: 	#1b5692,
+	twitter: 	#0098bc,
+	youtube: 	#ee2e2b,
+	google: 	#df4d3b,
+	linkedin: 	#006daa
+) !default;
+
+.#{$namespace}social {
+	ul {
+		@extend %bulletless;
+		display:flex;
+		margin:0;
+		li {margin:0 5px;
+			&:first-child {margin-left:0;}
+			&:last-child {margin-right:0;}
+			a {display:block;}
+		}
+		svg {
+			width:$icon-size;
+			height:$icon-size;
+		}
+	}
+}
+
+.#{$namespace}social-with-icons {
+	ul {
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			justify-content:center;
+		}
+	}
+}
+.#{$namespace}navigation {
+	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+		.#{$namespace}social-with-icons {
+			> ul {
+				> li {
+					> a {
+						padding: 0;
+						border: none;
+						background:transparent;
+					}
+				}
+			}
+		}
+	}
+}
+
+@each $social in map-keys($socials) {
+	.#{$namespace}social-#{$social} {
+		svg {fill:map-get($socials, $social)}
+	}
+}
+
+
+
+
+// Themes
+// *************************************
+
+
+
+// Functions
+// *************************************
+
+
+
+// Overwrite
+// *************************************
+.fb_reset {display:none;}

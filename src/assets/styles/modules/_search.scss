@@ -1,0 +1,70 @@
+//
+// _search
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}search {
+	position:relative;
+	padding-left:20px;
+	.#{$namespace}icon {
+		width:25px;
+		height:25px;
+	}
+	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+		position:inherit;
+	}
+}
+.#{$namespace}search-form {
+	position:absolute;
+	right:0;
+	top:-11px;
+	width:0;
+	height:auto;
+	overflow:hidden;
+	background:#fff;
+	z-index:3;
+	transition:all 0.5s ease-in-out;
+	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+		top:0;
+	}
+	&.is-active {
+		width:700px;
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			width:100%;
+		}
+	}
+	form {
+		margin-bottom:0;
+	}
+	.#{$namespace}search-form-input {
+		height:35px;
+		padding:5px;
+		margin-right:10px;
+	}
+}
+
+
+// Themes
+// *************************************
+.search {
+	.main {
+		padding-top:130px;
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			padding-top:0;
+		}
+	}
+}
+
+
+// Functions
+// *************************************
+
+

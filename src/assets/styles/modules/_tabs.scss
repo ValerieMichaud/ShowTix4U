@@ -1,0 +1,73 @@
+//
+// _tabs
+//
+// 
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}tabs-nav {
+	position: relative;
+	padding-left: 0;
+	@extend %clearfix;
+
+	> li {
+		position: relative;
+		float: left;
+		@extend %bulletless;
+
+		// maybe we could go with a more generic approach? TBD
+		button {
+			display: block;
+			background: none;
+			border: none;
+		}
+	}
+}
+.#{$namespace}tabs-content {
+	position: relative;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+
+	// could be not necessary, TBD
+	ul, ol {margin-top: 0;}
+}
+
+
+// Themes
+// *************************************
+
+
+
+// Functions
+// *************************************
+// Adds an arrow indicator for the active tab
+.#{$namespace}tabs[data-indicator] {
+	.#{$namespace}tabs-nav {
+		> li {
+			&.#{$namespace}tab-active:after {}
+		}
+	}
+}
+
+// Sets the tabs to be displayed vertically instead of the default horizontally
+.#{$namespace}tabs-vertical {
+	.#{$namespace}tabs-nav {
+		> li {float: none;}
+	}
+
+	&[data-indicator] {
+		.#{$namespace}tabs-nav {
+			> li {
+				&.#{$namespace}tab-active:after {}
+			}
+		}
+	}
+}

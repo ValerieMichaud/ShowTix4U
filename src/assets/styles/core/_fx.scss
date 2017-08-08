@@ -1,0 +1,86 @@
+//
+// _fx
+//
+// Shared special effects (transitions, animations, etc.)
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+$ui-fx-ease: cubic-bezier(.55,0,.1,1) !default; // <- Swift Out from "Google's Material's Design"
+
+
+
+// Base
+// *************************************
+@mixin do-fx($rule...) {
+	@if ($ui-enable-fx){
+		@include transition($rule);
+	}
+}
+
+@if ($ui-enable-fx) {
+	
+	.fx-fade-in {
+		opacity: 1 !important;
+		@include do-fx(opacity 1.0s $ui-fx-ease);
+	}
+	
+	.fx-fade-out {
+		opacity: 0;
+		@include do-fx(opacity 1.0s $ui-fx-ease);
+	}
+	
+	.fx-slide-vertical {
+		@include do-fx(max-height 0.5s $ui-fx-ease);
+	}
+
+	.fx-slide-horizontal {
+		@include do-fx(max-width 0.5s $ui-fx-ease);
+	}
+	
+	@include keyframes(fx-blink) {
+		0% 	 {opacity: 1;}
+		50%  {opacity: 0;}
+		100% {opacity: 1;}
+	}
+	.fx-blink { @include animation(fx-blink 1.0s $ui-fx-ease infinite); }
+
+	
+	// Buttons ripple effect
+	.fx-ripple {
+		position: relative;
+		display: inline-block;
+		outline: none !important;
+		overflow: hidden !important;
+	}
+	@include keyframes(fx-ripple) {
+		100% {
+			opacity: 0; 
+			@include transform(scale(1));
+		}
+	}
+	.fx-ripple-wave {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 200px;
+		height: 200px;
+		opacity: .75;
+
+		border-radius: 100%;
+		background-color: rgba(255,255,255,.75);
+		border: 1px solid transparent; // <- this fixes animation in Firefox
+		
+		@include transform(scale(0));
+		@include animation(fx-ripple .6s linear forwards);
+	}
+	.fx-ripple-text {
+		position: relative; 
+		//z-index: 2;
+	}
+	
+}
+

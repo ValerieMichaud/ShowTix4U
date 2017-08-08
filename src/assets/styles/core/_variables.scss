@@ -1,0 +1,67 @@
+//
+// _variables
+//
+// Sets the global variables used accross the UI (such as base widths, fonts, colors, etc.)
+// Please load a custom variables file before this one to overwrite the default values.
+// Ex:
+// 	@import "my-custom-vars-setup";
+//  @import "_variables";
+//
+// Unspecified value will fallback to the !default ones
+// ********************************************************************************************************************************
+// Default class namespace prefix, leave empty string if no namespace is required.
+$namespace: "ko-" !default;
+
+// Default page width (to be determined if useful or not)
+$ui-page-width: 1024px !default;
+
+// Default value for Mobile nav
+$ui-mobile-nav-breakpoint: 'md' !default;
+
+// Default breakpoints for responsive media queries
+$ui-breakpoints: (
+	xs: 0,
+	sm: 544px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+) !default;
+$ui-container-max-widths: (
+	sm: 520px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+) !default;
+
+// Use special effects? (animation, transtion, hover effects, etc.)
+$ui-enable-fx: true !default;
+
+// Sets type properties
+$ui-font-base-size: 14px !default;
+
+// [bourbon] Sets same default font size for Bourbon functions
+$em-base: $ui-font-base-size;
+
+$ui-font-family: Arial, sans-serif !default;
+$ui-font-sizes: (
+	1 : rem(40),
+	2 : rem(32),
+	3 : rem(24),
+	4 : rem(18),
+	5 : rem(16),
+	6 : rem(14)
+) !default;
+
+
+// Color list
+$ui-colors: (
+	primary : 				#666666,
+	secondary : 			#dddddd,
+	link :                  #000000
+) !default;
+
+// Default value for text colour
+$ui-text-color: #000000 !default;
+
+// Font Awesome
+$has-font-awesome: true !default;

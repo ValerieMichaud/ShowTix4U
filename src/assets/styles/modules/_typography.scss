@@ -1,0 +1,19 @@
+//
+// _typography
+//
+// 
+// ********************************************************************************************************************************
+
+.#{$namespace}heading-1 {font-size:rem(40);}
+.#{$namespace}heading-2 {font-size:rem(32);}
+.#{$namespace}heading-3 {font-size:rem(28);}
+.#{$namespace}heading-4 {font-size:rem(24);}
+.#{$namespace}heading-5 {font-size:rem(18);}
+
+@include media-breakpoint-down(sm) {
+	.#{$namespace}heading-1 {font-size:rem(28);}
+	.#{$namespace}heading-2 {font-size:rem(24);}
+	.#{$namespace}heading-3 {font-size:rem(18);}
+	.#{$namespace}heading-4 {font-size:rem(16);}
+	.#{$namespace}heading-5 {font-size:rem(14);}
+}
