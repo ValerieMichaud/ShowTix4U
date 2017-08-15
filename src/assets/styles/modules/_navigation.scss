@@ -7,10 +7,8 @@
 // Variables
 $ui-bar-width: 20px;
 $ui-bar-height: 4px;
-$ui-bar-color: #000;
+$ui-bar-color: map-get($ui-colors, broid-blue);;
 $ui-bar-radius: 2px;
-$ui-nav-item-background: map-get($ui-colors, super-light-grey);
-$ui-nav-item-background-hover: map-get($ui-colors, light-grey);
 
 // Extends
 %bar {
@@ -23,8 +21,6 @@ $ui-nav-item-background-hover: map-get($ui-colors, light-grey);
 
 .#{$namespace}navigation {
 	position:relative;
-	margin-bottom:-36px;
-	background:rgba(216,216,216,0.7);
 	z-index:4;
  	ul {
 		@extend %bulletless;
@@ -33,13 +29,49 @@ $ui-nav-item-background-hover: map-get($ui-colors, light-grey);
 		margin:0;
  	 	> li {
 			a {
-				display:block;
-				padding:10px 20px;
-				color:#000;
+				position:relative;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				height:30px;
+				padding:0 10px;
+				margin:0 5px;
+				font-size:16px;
+				color:map-get($ui-colors, broid-blue);
+				font-weight:400;
 				text-decoration:none;
-			}
-			&:first-child {
-				a {padding-left:0;}
+				&:after {
+					position:absolute;
+					left:0;
+					bottom:-2px;
+					content:'';
+					display:block;
+					width:100%;
+					height:0;
+					background:transparent;
+					transition:all 0.5s ease;
+				}
+				&:hover, &.is-active {
+					color:map-get($ui-colors, purple);
+					&:after {
+						height:3px;
+						background:map-get($ui-colors, purple);
+					}
+				}
+
+				&.#{$namespace}login {
+					padding-left:20px;
+					padding-right:20px;
+					color:#fff;
+					border-radius:20px;
+					background:map-get($ui-colors, broid-blue);
+					&:hover {
+						background:map-get($ui-colors, broid-blue-hover);
+						&:after {
+							display:none;
+						}
+					}
+				}
 			}
 		}
 		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
@@ -49,60 +81,80 @@ $ui-nav-item-background-hover: map-get($ui-colors, light-grey);
 			}
 		}
  	}
+
+ 	.is-floating & {
+ 		ul {
+ 			> li {
+ 				a {
+ 					&:hover, &.is-active {
+						&:after {
+							display:none;
+						}
+					}
+ 				}
+ 			}
+ 		}
+ 	}
 	
 	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-		position:fixed;
-		top:0;
-		width:85%;
-		height:100vh;
-		left:-185%;
-		transition:left 0.5s ease-in-out;
-		background:$ui-nav-item-background;
-		z-index:3;
-		&:after {
+		position:absolute;
+		top:100px;
+		width:100%;
+		height:0;
+		left:0;
+		overflow:hidden;
+		transition:height 0.5s ease-in-out;
+		z-index:11;
+		.#{$namespace}navigation-wrap {
+			position:relative;
+			background:#fff;
+			z-index:3;
+		}
+		.#{$namespace}navigation-overlay {
 			position:absolute;
 			content:'';
 			display:block;
-			left:100%;
+			left:0;
 			top:0;
-			height:100%;
+			height:0;
 			width:100%;
 			opacity:0;
 			background:rgba(0,0,0,0.7);
-			z-index:-1;
-			transition:opacity 0.5s ease-in-out;
-			transition-delay:1s;
+			transition:all 0.5s ease-in-out;
+			z-index:2;
 		}
 		.#{$namespace}page-wrap {
 			position:relative;
-			width:100%;
+			height:100%;
 			padding:0;
 		}
 		ul {
 			> li, > li:first-child {
 				> a {
+					justify-content:start;
+					margin:0;
+					height:auto;
 					padding:15px 10px;
 					border-bottom:1px solid #cccccb;
 					color:#000;
 					background:#fff;
+					&.#{$namespace}login {
+						border-radius:0;
+						padding-left:10px;
+						padding-right:10px;
+					}
 				}
 			}
 		}
 		&.is-active {
-			left:0;
-			&:after {
+			height:100vh;
+			.#{$namespace}navigation-overlay {
 				opacity:1;
-				z-index:1;
+				height:100%;
 			}
 		}
-	}
-	
-	@include media-breakpoint-down(sm) {
-		.#{$namespace}phone-number {
-			font-size:12px;
-		}
-		.#{$namespace}button {
-			font-size:12px;
+		.is-floating & {
+			top:50px;
 		}
 	}
 	
@@ -166,7 +218,7 @@ $ui-nav-item-background-hover: map-get($ui-colors, light-grey);
 	}
 	
 	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-		display: block;
+		display: flex;
 	}
 }
 

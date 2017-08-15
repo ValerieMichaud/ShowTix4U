@@ -1,138 +1,114 @@
-body {background-color:map-get($ui-colors, super-light-grey);}
+body {}
 
-.#{$namespace}border-top-a {
-    margin-top:20px;
-    padding-top:20px;
-    border-top:1px solid #000;
-}
-
-.#{$namespace}background-white {background:#fff;}
-
-
-.#{$namespace}phone-number {
-	font-size:18px;
-	color:$ui-text-color;
-	text-decoration:none;
-	font-weight:bold;
-}
-
-
-//
-// _Header
-//
-// ********************************************************************************************************************************
-.#{$namespace}page-header {
-    padding:20px 0;
-    @include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-        padding-top:10px;
-        padding-bottom:10px;
-    }
-}
-
-
-//
-// _Logo
-//
-// ********************************************************************************************************************************
-.#{$namespace}brand {
-    .#{$namespace}icon {
-        width:120px;
-        height:50px;
-    }
-    @include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-        display:table;
-        margin:0 auto;
-    }
-    .#{$namespace}site-title {
-        font-size:24px;
-        margin-left:10px;
-        @include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-            font-size:18px;
-        }
-    }
-    a {
-    	text-decoration:none;
-        color:#000;
-    }
-}
-
-.st2 {fill:map-get($ui-colors, primary);}
-.st1 {fill:map-get($ui-colors, secondary);}
-#st1 * {fill:map-get($ui-colors, secondary);}
-
-.#{$namespace}page-footer {
-    .#{$namespace}brand {
-        svg {
-            width:120px;
-            height:50px;
-        }
-    }
-}
-
-
-//
-// _Grid
-//
-// ********************************************************************************************************************************
-.#{$namespace}grid {
-    position:relative;
-    [class*="col"] {display:flex;}
-}
-.#{$namespace}grid-with-featured {
-	margin-top:-15vh;
-    @include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-        margin-top:20px;
-    }
-}
-
-
-//
-// _Newsletter
-//
-// ********************************************************************************************************************************
-.#{$namespace}newsletter {
-	.#{$namespace}icon {
-		width:35px;
-		height:35px;
+.#{$namespace}page-body {
+	xpadding-top:100px;
+	.#{$namespace}banner {
+		&:first-child {
+			padding-top:100px;
+		}
 	}
-    .#{$namespace}newsletter-title {
-        margin-right:20px;
-        margin-left:20px;
-    }
-    
-	// form {
-	// 	input {
-	// 		margin-right:10px;
-	// 		margin-left:10px;
-	// 		padding:10px 15px;
-	// 		border:none;
-	// 		background:map-get($ui-colors, super-light-grey);
-	// 	}
-	// }
 }
 
+.#{$namespace}to-background-hover {
+	background:map-get($ui-colors, background-hover);
+}
+.#{$namespace}to-background-ocean {
+	background:map-get($ui-colors, background-ocean);
+}
 
-//
-// _Footer
-//
-// ********************************************************************************************************************************
-.#{$namespace}page-footer {
-    .#{$namespace}navigation-footer {
-        > ul {
-            @extend %bulletless;
-            display:flex;
-            flex-wrap:wrap;
-            margin:0;
-            > li {
-                margin:0 10px;
-                &:first-child {margin-left:0;}
-                &:last-child {margin-right:0;}
-                > a {
-                    color:$ui-text-color;
-                    text-decoration:none;
-                    font-weight:bold;
-                }
-            }
-        }
-    }
+.#{$namespace}border-top-white {
+	border-top:1px solid rgba(#fff, 0.5);
+}
+
+.#{$namespace}support {
+	img {
+		@include media-breakpoint-down(md) {
+			margin-bottom:20px;
+		}
+	}
+}
+
+.#{$namespace}channels {
+	.col-sm-6, .col-md6 {
+		margin-bottom:20px;
+	}
+}
+
+.row {
+	&-team {
+		display:flex;
+		justify-content:center;
+	}
+}
+
+.#{$namespace}page-body {
+	.#{$namespace}banner {
+		&:not(.#{$namespace}banner-no-extra-padding-top) {
+			&:nth-child(1) {
+				//padding-top:20%;
+			}
+		}	
+	}
+}
+
+.#{$namespace}line {
+	margin:60px 0;
+	i {
+		display:table;
+		margin:0 auto;
+		width:120px;
+		height:1px;
+		background:#fff;
+	}
+	@include media-breakpoint-down(xs) {
+		margin:20px 0;
+	}
+}
+
+.#{$namespace}separator {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	i {
+		position:relative;
+		display:inline-block;
+		width:8px;
+		height:8px;
+		border-radius:50%;
+		background:map-get($ui-colors, broid-blue);
+		&:before, &:after {
+			position:absolute;
+			content:'';
+			display:block;
+			width:8px;
+			height:8px;
+			border-radius:50%;
+			background:map-get($ui-colors, broid-blue);
+		}
+		&:before {
+			left:-15px;
+		}
+		&:after {
+			left:15px;
+		}
+	}
+}
+
+.#{$namespace}faq {
+	position:relative;
+	.#{$namespace}icon {
+		position:absolute;
+		left:0;
+		top:7px;
+		width:17px;
+		height:15px;
+		fill:map-get($ui-colors, broid-blue);
+		transform:rotate(180deg);
+		transition:transform 0.5s ease;
+	}
+	&.is-active {
+		.#{$namespace}icon {
+			transform:rotate(0deg);
+		}
+	}
 }

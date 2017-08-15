@@ -14,8 +14,8 @@ var sass = require('gulp-sass');
 var cssmin = require('gulp-cssmin');
 var csslint = require('gulp-csslint');
 var uglify = require('gulp-uglify');
-var rename = require("gulp-rename");
 var concat = require('gulp-concat');
+var rename = require("gulp-rename");
 var clean = require('gulp-clean');
 var gutil = require('gulp-util');
 var bless = require('gulp-bless');
@@ -34,13 +34,13 @@ var purify = require('gulp-purifycss');
 
 
 var config = {
-  	entryFile: './src/app.js',
-  	outputDir: './dist/',
-  	outputFile: 'app.js',
+    entryFile: './src/app.js',
+    outputDir: './dist/',
+    outputFile: 'app.js',
 },
 basePaths = {
-	src: 'src/',
-	dest: 'dist/'
+    src: 'src/',
+    dest: 'dist/'
 },
 paths = {
     scripts: {
@@ -62,8 +62,8 @@ paths = {
 },
 
 // prefix/suffix
-filePrefix = "ko.",
-classPrefix = "ko-",
+filePrefix = "showtix.",
+classPrefix = "showtix-",
 minSuffix = ".min",
 
 // csslint
@@ -107,30 +107,30 @@ csslintWarning = {
 
 // clean the output directory
 gulp.task('clean', function(cb){
-	rimraf(config.outputDir, cb);
+    rimraf(config.outputDir, cb);
 });
 
 
 var bundler;
 function getBundler() {
   if (!bundler) {
-	bundler = watchify(browserify(config.entryFile, _.extend({ debug: true }, watchify.args)));
+    bundler = watchify(browserify(config.entryFile, _.extend({ debug: true }, watchify.args)));
   }
   return bundler;
 };
 
 function bundle() {
   return getBundler()
-	.transform(babelify)
-	.bundle()
-	.on('error', function(err) { console.log('Error: ' + err.message); })
-	.pipe(source(config.outputFile))
-	.pipe(gulp.dest(config.outputDir))
-	.pipe(reload({ stream: true }));
+    .transform(babelify)
+    .bundle()
+    .on('error', function(err) { console.log('Error: ' + err.message); })
+    .pipe(source(config.outputFile))
+    .pipe(gulp.dest(config.outputDir))
+    .pipe(reload({ stream: true }));
 }
 
 gulp.task('build-persistent', ['clean'], function() {
-	gulp.start('web-deploy')
+    gulp.start('web-deploy')
   return bundle();
 });
 
@@ -141,22 +141,22 @@ gulp.task('build', ['build-persistent'], function() {
 gulp.task('watch', ['build-persistent'], function() {
 
   browserSync({
-	server: {
-	  baseDir: './'
-	}
+    server: {
+      baseDir: './'
+    }
   });
 
   getBundler().on('update', function() {
-	gulp.start('build-persistent')
+    gulp.start('build-persistent')
   });
 });
 
 // WEB SERVER
 gulp.task('serve', function () {
   browserSync({
-	server: {
-	  baseDir: './'
-	}
+    server: {
+      baseDir: './'
+    }
   });
 });
 
@@ -212,6 +212,82 @@ gulp.task('tasks-css', ['clean-styles'], function() {
         .pipe(gulp.dest(paths.styles.dest));
 });
 
+
+// jQuery task... (moves jQuery from src to dist folder)
+gulp.task('move-jquery', ['clean-scripts'], function() {
+    gulp.src(paths.scripts.src + 'vendors/jquery.min.js')
+        .pipe(gulp.dest(paths.scripts.dest));
+});
+
+// variables task... (moves variables.js from src to dist folder)
+gulp.task('move-variables', ['clean-scripts'], function() {
+    gulp.src(paths.scripts.src + 'core/variables.js')
+        .pipe(rename({
+            basename: "variables",
+            prefix: filePrefix
+        }))
+        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
+        .pipe(gulp.dest(paths.scripts.dest))
+        //.pipe(sourcemaps.init())
+        .pipe(uglify({
+            mangle: true
+        }))
+        .pipe(rename({
+            basename: "variables",
+            prefix: filePrefix,
+            suffix: minSuffix
+        }))
+        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
+        //.pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.scripts.dest));
+});
+
+// UI Scripts... (Minifies and merges JS script files)
+gulp.task('ui-js-files', ['clean-scripts'], function() {
+    gutil.log(gutil.colors.yellow('Gulping All JS files together...'));
+    return gulp.src([
+            '!' + paths.scripts.src + 'vendors/jquery.min.js',
+            '!' + paths.scripts.src + 'core/variables.js',
+            '!' + paths.scripts.src + 'modules/*.js',
+            '!' + paths.scripts.src + 'vendors/ie/**/*.js',
+            paths.scripts.src + 'core/variables.js', // variables first - very important
+            paths.scripts.src + 'core/init.js', // init in second
+            paths.scripts.src + 'utils/**/*.js', // everything inside /utils/
+
+            'node_modules/mustache/mustache.js', // mustache
+            //paths.scripts.src + 'vendors/mustache-wax.js', // modal vendor
+            paths.scripts.src + 'vendors/bootstrap.modal.js', // modal vendor
+            paths.scripts.src + 'modules/modal.js', // modal extend
+            paths.scripts.src + 'vendors/jquery.localize.min.js',  // timeline
+            paths.scripts.src + 'vendors/skrollr.min.js',  // skrollr
+        ])
+        .pipe(concat(filePrefix + 'ui.js'))
+        .pipe(rename({
+            basename: "ui",
+            prefix: filePrefix
+        }))
+        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
+        .pipe(gulp.dest(paths.scripts.dest))
+        //.pipe(sourcemaps.init())
+        .pipe(uglify({
+            mangle: true
+        }))
+        .pipe(rename({
+            basename: "ui",
+            prefix: filePrefix,
+            suffix: minSuffix
+        }))
+        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
+        //.pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.scripts.dest));
+});
+
+// jQuery task... (moves jQuery from src to dist folder)
+gulp.task('move-locale', ['ui-js-files'], function() {
+    gulp.src(paths.scripts.src + 'locale/*.**')
+        .pipe(gulp.dest(paths.scripts.dest + 'locale'));
+});
+
 // SVG task... (Combines all svg sources into single svg file with <symbol> elements)
 gulp.task('tasks-svg', ['clean-svgs'], function () {
     return gulp
@@ -263,72 +339,6 @@ gulp.task('tasks-svg', ['clean-svgs'], function () {
         .pipe(gulp.dest(paths.svg.dest));
 });
 
-// jQuery task... (moves jQuery from src to dist folder)
-gulp.task('move-jquery', ['clean-scripts'], function() {
-    gulp.src(paths.scripts.src + 'vendors/jquery.min.js')
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// variables task... (moves variables.js from src to dist folder)
-gulp.task('move-variables', ['clean-scripts'], function() {
-    gulp.src(paths.scripts.src + 'core/variables.js')
-        .pipe(rename({
-            basename: "variables",
-            prefix: filePrefix
-        }))
-        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
-        .pipe(gulp.dest(paths.scripts.dest))
-        //.pipe(sourcemaps.init())
-        .pipe(uglify({
-            mangle: true
-        }))
-        .pipe(rename({
-            basename: "variables",
-            prefix: filePrefix,
-            suffix: minSuffix
-        }))
-        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
-        //.pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// UI Scripts... (Minifies and merges JS script files)
-gulp.task('ui-js-files', ['clean-scripts'], function() {
-    gutil.log(gutil.colors.yellow('Gulping All JS files together...'));
-    return gulp.src([
-            '!' + paths.scripts.src + 'vendors/jquery.min.js',
-            '!' + paths.scripts.src + 'core/variables.js',
-            '!' + paths.scripts.src + 'modules/*.js',
-            '!' + paths.scripts.src + 'vendors/ie/**/*.js',
-            paths.scripts.src + 'core/variables.js', // variables first - very important
-            paths.scripts.src + 'core/init.js', // init in second
-            paths.scripts.src + 'utils/**/*.js', // everything inside /utils/
-            paths.scripts.src + 'vendors/bootstrap.modal.js', // modal vendor
-            paths.scripts.src + 'modules/modal.js', // modal extend
-            paths.scripts.src + 'vendors/timeline.js',  // timeline
-        ])
-        .pipe(concat(filePrefix + 'ui.js'))
-        .pipe(rename({
-            basename: "ui",
-            prefix: filePrefix
-        }))
-        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
-        .pipe(gulp.dest(paths.scripts.dest))
-        //.pipe(sourcemaps.init())
-        .pipe(uglify({
-            mangle: true
-        }))
-        .pipe(rename({
-            basename: "ui",
-            prefix: filePrefix,
-            suffix: minSuffix
-        }))
-        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
-        //.pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-
 
 // Move images from src to dist
 gulp.task('move-imgs', ['clean-imgs'], function() {
@@ -351,18 +361,65 @@ gulp.task('report', function() {
 });
 
 // CSS
-gulp.task('css', ['clean-styles', 'tasks-css', 'css-purify']);
+gulp.task('css', ['tasks-css', 'css-purify']);
 
 // JS
-gulp.task('js', ['clean-scripts', 'move-jquery', 'move-variables', 'ui-js-files', 'tasks-vendors-ie-js']);
+gulp.task('js', ['move-jquery', 'move-variables', 'ui-js-files', 'move-locale']);
 
 // SVG
-gulp.task('svg', ['clean-svgs', 'tasks-svg']);
+gulp.task('svg', ['tasks-svg']);
 
 // IMAGES
-gulp.task('images', ['clean-imgs', 'move-imgs']);
+gulp.task('images', ['move-imgs']);
 
 // CSS + JS + SVG
-gulp.task('web-deploy', ['css', 'svg', 'images']);
+gulp.task('web-deploy', ['css', 'js', 'svg', 'images']);
+
+
+// Create arguments ref : https://www.sitepoint.com/pass-parameters-gulp-tasks/
+const arg = (argList => {
+  let arg = {}, a, opt, thisOpt, curOpt;
+  for (a = 0; a < argList.length; a++) {
+
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt) arg[curOpt] = opt;
+      curOpt = null;
+    }
+    else {
+      // argument name
+      curOpt = opt;
+      arg[curOpt] = true;
+
+    }
+  }
+  return arg;
+})(process.argv);
+
+gulp.task('skin', function(){
+    gutil.log(arg.course);
+
+    gutil.log(gutil.colors.yellow('Gulping Skin CSS...'));
+    gulp.src(paths.styles.src + 'skins/' + arg.course + '.scss')
+        .pipe(sass({errLogToConsole: true}).on('error', sass.logError))
+        .pipe(csslint(csslintWarning))
+        .pipe(csslint.reporter())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gsize({title:"CSS", showFiles: true}))
+        .pipe(rename({
+            basename: 'timeline'
+        }))
+        .pipe(bless())
+        .pipe(replace('@charset "UTF-8";', ''))
+        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
+        .pipe(cssmin())
+        .pipe(gulp.dest('courses/' + arg.course + '/timeline/'));
+});
 
 

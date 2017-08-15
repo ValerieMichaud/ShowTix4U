@@ -1,0 +1,71 @@
+//
+// _pricing
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+
+// Base
+// *************************************
+.#{$namespace}pricing {
+	position:relative;
+	padding:40px 0;
+	background:map-get($ui-colors, background-ocean) url('../images/pricing-wrapper-background.svg') center 121px;
+	&-background {
+        padding:10px 0;
+		z-index:2;
+		background:url('../images/pricing_background.svg') no-repeat center center;
+	}
+    .#{$namespace}card {
+        margin-left:-20px;
+        margin-right:-20px;
+        @include media-breakpoint-down(xs) {
+            margin-left:0;
+            margin-right:0;
+        }
+    }
+}
+
+
+.#{$namespace}price {
+    color:map-get($ui-colors, purple);
+    font-size:60px;
+    font-weight:700;
+    sup {
+        font-size:21px;
+        font-weight:400;
+        top:-26px;
+    }
+}
+
+.#{$namespace}feature {
+    padding-top:20px;
+    color:map-get($ui-colors, dark-grey);
+    font-size:16px;
+    font-weight:300;
+    text-align:left;
+    .#{$namespace}icon {
+        width:26px;
+        height:26px;
+        margin-right:10px;
+        fill:map-get($ui-colors, broid-blue);
+    }
+    
+}
+
+
+
+// Themes
+// *************************************
+
+
+
+// Functions
+// *************************************
+
+

@@ -30,7 +30,7 @@
 
 
 .#{$namespace}padder {
-	padding: $grid-gutter-width-base;
+	padding:20px;
 }
 
 
@@ -81,12 +81,12 @@ $direction: ('top', 'right', 'bottom', 'left') !default;
 	@each $index in $list {
 		.#{$class-slug}#{nth($index, 1)} {
 			#{$property}: #{nth($index, 1)}#{$property-unit} !important;
-		}
+		}	
 	}
 }
 
 // Spacings variations/steps (currently the same for margins and paddings)
-$spacing-steps: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
+$spacing-steps: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90) !default;
 
 // Margins
 @include do-spacing-helpers("margin", top, 		px, '#{$namespace}to-margin-', $spacing-steps);
@@ -115,6 +115,7 @@ $spacing-steps: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
 			#{$spacer-type}: ($spacer-max / $spacer-count) * $i 0;
 		}
 	}
+
 }
 @include do-static-spacers-helpers($spacer-name: "#{$namespace}spacer", $spacer-max: 2.5em);
 
@@ -249,8 +250,32 @@ $spacing-steps: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
 	}
 }
 
+// hide :
+// hide classes per breakpoint (up/down)
+@each $breakpoint, $breakpoint-value in $ui-breakpoints {
+	@include media-breakpoint-up($breakpoint) {
+		.#{$namespace}to-align-left-up-#{$breakpoint} {text-align:left !important;}
+		.#{$namespace}to-align-right-up-#{$breakpoint} {text-align:right !important;}
+		.#{$namespace}to-align-center-up-#{$breakpoint} {text-align:center !important;}
+	}
+	@include media-breakpoint-down($breakpoint) {
+		.#{$namespace}to-align-left-down-#{$breakpoint} {text-align:left !important;}
+		.#{$namespace}to-align-right-down-#{$breakpoint} {text-align:right !important;}
+		.#{$namespace}to-align-center-down-#{$breakpoint} {text-align:center !important;}
+	}
+	@include media-breakpoint-only($breakpoint) {
+		.#{$namespace}to-align-left-only-#{$breakpoint} {text-align:left !important;}
+		.#{$namespace}to-align-right-only-#{$breakpoint} {text-align:right !important;}
+		.#{$namespace}to-align-center-only-#{$breakpoint} {text-align:center !important;}
+		@include do-spacing-helpers("padding", top, 	px, '#{$namespace}#{$breakpoint}-to-padding-', $spacing-steps);
+		@include do-spacing-helpers("padding", bottom, 	px, '#{$namespace}#{$breakpoint}-to-padding-', $spacing-steps);
+		@include do-spacing-helpers("margin", top, 	px, '#{$namespace}#{$breakpoint}-to-margin-', $spacing-steps);
+		@include do-spacing-helpers("margin", bottom, 	px, '#{$namespace}#{$breakpoint}-to-margin-', $spacing-steps);
+	}
+}
+
 
 .#{$namespace}responsive {
-	width:100%;
+	max-width:100%;
 	height:auto;
 }

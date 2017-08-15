@@ -10,7 +10,7 @@
 // Unspecified value will fallback to the !default ones
 // ********************************************************************************************************************************
 // Default class namespace prefix, leave empty string if no namespace is required.
-$namespace: "ko-" !default;
+$namespace: "showtix-" !default;
 
 // Default page width (to be determined if useful or not)
 $ui-page-width: 1024px !default;
@@ -27,8 +27,8 @@ $ui-breakpoints: (
 	xl: 1200px
 ) !default;
 $ui-container-max-widths: (
-	sm: 520px,
-	md: 720px,
+	sm: 100%,
+	md: 100%,
 	lg: 960px,
 	xl: 1140px
 ) !default;
@@ -42,7 +42,7 @@ $ui-font-base-size: 14px !default;
 // [bourbon] Sets same default font size for Bourbon functions
 $em-base: $ui-font-base-size;
 
-$ui-font-family: Arial, sans-serif !default;
+$ui-font-family: 'Lato', sans-serif !default;
 $ui-font-sizes: (
 	1 : rem(40),
 	2 : rem(32),
@@ -52,12 +52,22 @@ $ui-font-sizes: (
 	6 : rem(14)
 ) !default;
 
-
 // Color list
 $ui-colors: (
-	primary : 				#666666,
-	secondary : 			#dddddd,
-	link :                  #000000
+	black : 					#13171a,
+	dark-grey : 				#657686,
+	background-dark-ocean :     #2e97d5,
+	background-ocean :			#35a1e2,
+	background-hover :			#f1faff,
+	highlight :					#f5f2b3,
+	broid-blue :				#1da1f2,
+	broid-blue-hover :			#0278c7,
+	green :						#53c6ab,
+	green-hover :				#0bb58c,
+	purple :					#274e87,
+	purple-hover :				#2560b6,
+	pink :						#fe8b84
+
 ) !default;
 
 // Default value for text colour

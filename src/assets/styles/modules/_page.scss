@@ -43,42 +43,10 @@ button {
 }
 
 
+$grid-breakpoints: $ui-breakpoints;
+$container-max-widths: $ui-container-max-widths;
 .#{$namespace}page-wrap {
 	@include make-container();
 	@include make-container-max-widths();
-	//position:inherit;
-}
-.#{$namespace}page-header {
-	position:relative;
-}
-.#{$namespace}page-body {}
-.#{$namespace}page-content {
-	position:relative;
-}
-
-.#{$namespace}page-footer {
-	padding-top:20px;
-	padding-bottom:20px;
-}
-
-// Themes
-// *************************************
-
-.#{$namespace}no-filters-categories{
-	padding-top: 40px;
-}
-
-
-.#{$namespace}entry-content{
-	padding-bottom: 10px;
-	a{
-		color: map-get( $ui-colors, contentlink );
-		text-decoration: none;
-		&:hover{
-			text-decoration: underline;
-		}
-	}
-	p{
-		margin: 0 0 15px;
-	}
+	position:inherit;
 }

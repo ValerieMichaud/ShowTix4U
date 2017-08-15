@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>telegram_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="66.67%" y1="16.67%" x2="41.67%" y2="75%" id="linearGradient-1">
+            <stop stop-color="#37AEE2" offset="0%"></stop>
+            <stop stop-color="#1E96C8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="61.2346759%" y1="43.69%" x2="74.7064382%" y2="80.24%" id="linearGradient-2">
+            <stop stop-color="#EFF7FC" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logos-Couleur" transform="translate(-12754.000000, -498.000000)">
+            <g id="telegram_color" transform="translate(12754.000000, 498.000000)">
+                <g id="Group-2">
+                    <circle id="Oval" fill="url(#linearGradient-1)" cx="250" cy="250" r="250"></circle>
+                    <path d="M204.166667,364.583333 C196.0675,364.583333 197.44375,361.525208 194.650417,353.813542 L170.833333,275.428958 L354.166667,166.666667" id="Shape" fill="#C8DAEA"></path>
+                    <path d="M204.166667,364.583333 C210.416667,364.583333 213.178125,361.725 216.666667,358.333333 L250,325.920833 L208.420833,300.847917" id="Shape" fill="#A9C9DD"></path>
+                    <path d="M208.416667,300.854167 L309.166667,375.289583 C320.663542,381.633125 328.96125,378.34875 331.825,364.615625 L372.835417,171.359375 C377.034167,154.525625 366.418542,146.890625 355.42,151.883958 L114.6075,244.740208 C98.1697917,251.333333 98.265625,260.503958 111.61125,264.590208 L173.409167,283.878333 L316.477917,193.617917 C323.231875,189.522292 329.430625,191.724188 324.342917,196.239583" id="Shape" fill="url(#linearGradient-2)"></path>
+                </g>
+                <rect id="500x500" x="0" y="0" width="500" height="500"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

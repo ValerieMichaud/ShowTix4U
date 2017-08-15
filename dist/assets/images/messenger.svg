@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="497px" height="500px" viewBox="0 0 497 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>messenger_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logos-Couleur" transform="translate(-6756.000000, -498.000000)">
+            <g id="messenger_color" transform="translate(6754.000000, 498.000000)">
+                <path d="M250.472133,0 C113.244524,0 2,103.637346 2,231.481481 C2,304.328704 38.1318607,369.307099 94.5983104,411.739198 L94.5983104,500 L179.200757,453.282407 C201.779311,459.569444 225.698998,462.962963 250.472133,462.962963 C387.699742,462.962963 498.944266,359.325617 498.944266,231.481481 C498.944266,103.637346 387.699742,0 250.472133,0 L250.472133,0 Z M275.165016,311.728395 L211.889504,243.82716 L88.4250897,311.728395 L224.235945,166.666667 L289.054762,234.567901 L410.975871,166.666667 L275.165016,311.728395 L275.165016,311.728395 Z" id="Messenger-color" fill="#0084FF"></path>
+                <rect id="500x500" x="0" y="0" width="500" height="500"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

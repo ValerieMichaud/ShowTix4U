@@ -63,70 +63,73 @@ MY_PROJECT_NAME.o_swiper = {
 		autoplayDisableOnInteraction : true
 	},
     o_swiperConfig:{
-		"horizontal":{
-			direction: 'horizontal'
-		},
-		"vertical":{
-			direction: 'vertical'
-		},
-		"3slidesperview":{
-			slidesPerView: 3
-		},
-		"centered":{
-			slidesPerView: 4
-		},
-		"scrollbar":{
-			scrollbar: '.swiper-scrollbar',
-			scrollbarHide: false,
-			slidesPerView: 'auto',
-			centeredSlides: true
-		},
-		"loop":{
-			loop: true
-		},
-		"fade":{
-			effect: 'fade'
-		},
-		"gallerytop":{
-			spaceBetween: 10
-		},
-		"gallerythumbs":{
-			spaceBetween: 10,
-			centeredSlides: true,
-			slidesPerView: 'auto',
-			touchRatio: 0.2,
-			slideToClickedSlide: true
-		},
-		"paginationnumber":{
-			paginationBulletRender: function (index, className) {
-				return '<span class="' + className + '">' + (index + 1) + '</span>';
-			}
-		},
-		"lazyload":{
-			preloadImages: false,
-			lazyLoading: true
-		},
-		"responsivebreakpoints1":{
+		"channels":{
+			direction: 'horizontal',
 			slidesPerView: 5,
-			breakpoints: {
+			centeredSlides: true,
+        	paginationClickable: true,
+        	spaceBetween: 50,
+        	breakpoints: {
 				1024: {
-					slidesPerView: 4,
-					spaceBetween: 40
+					slidesPerView: 5
 				},
 				768: {
-					slidesPerView: 3,
-					spaceBetween: 30
+					slidesPerView: 4
 				},
 				640: {
-					slidesPerView: 2,
+					slidesPerView: 2
+				},
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 20
+				}
+			}
+		},
+		"support":{
+			direction: 'horizontal',
+			slidesPerView: 5,
+			paginationClickable: true,
+			pagination: '.swiper-pagination-support',
+        	spaceBetween: 60,
+        	breakpoints: {
+				1024: {
+					slidesPerView: 5
+				},
+				768: {
+					slidesPerView: 4
+				},
+				640: {
+					slidesPerView: 2
+				},
+				320: {
+					slidesPerView: 1
+				}
+			}
+		},
+		"testimonials":{
+			direction: 'horizontal',
+			slidesPerView: 3,
+			centeredSlides: true,
+        	spaceBetween: 80,
+        	breakpoints: {
+				1024: {
+					slidesPerView: 1,
+					spaceBetween: 60,
+				},
+				768: {
+					slidesPerView: 1,
+					spaceBetween: 40
+				},
+				640: {
+					slidesPerView: 1,
 					spaceBetween: 20
 				},
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 10
+					spaceBetween: 20
 				}
 			}
-		}
+		},
     },
 	i_swiperCount: 0,
 	f_updateAccessibilityLabels: function(swiperIndex, swiperID, config) {
@@ -175,15 +178,13 @@ function doInitSwiper(){
             window[s_swiperID] = new Swiper($(this), o_modifiedSwiperConfig);
 
 			//NOTE - For a two-way swiper
-			if($c.attr('data-control')){
-				window['swiper_' + $c.attr('data-config')].params.control = window['swiper_' + $c.attr('data-control')];
-			}
+			//if($c.attr('data-control')){
+			//	window['swiper_' + $c.attr('data-config')].params.control = window['swiper_' + $c.attr('data-control')];
+			//}
 		});
 
 		//NOTE - Attach handler on a specific Swiper
-		//window['swiper_vertical'].on('slideChangeStart', function () {
-		//	console.log('slide change start');
-		//});
+		window['swiper_channels'].slideTo(2);
 	}
 
 

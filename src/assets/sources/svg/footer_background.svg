@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1845px" height="323px" viewBox="0 0 1845 323" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 2 + Path 2 Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="-57.6322115%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3AA3E3" offset="0%"></stop>
+            <stop stop-color="#3699DB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Path-2-+-Path-2-Mask" transform="translate(0.742188, 0.672150)">
+            <path d="M0,322.18591 L1843.63642,320.905428 L1843.89444,156.403474 C1843.89444,156.403474 1503.80397,249.408501 891.623151,109.085654 C279.442328,-31.2371938 0.50586953,96.0707522 0.50586953,96.0707522 L0,322.18591 Z" id="Path-2" fill="url(#linearGradient-1)"></path>
+            <path d="M0,322.18591 L1843.63642,320.905428 L1843.89444,28.3552496 C1843.89444,28.3552496 1451.04648,-73.5767802 891.623151,109.085654 C332.199816,291.748088 0.50586953,160.094865 0.50586953,160.094865 L0,322.18591 Z" id="Path-2" fill="#35A1E2" opacity="0.900000036"></path>
+        </g>
+    </g>
+</svg>

@@ -13,25 +13,122 @@
 // Base
 // *************************************
 .#{$namespace}banner {
-	position: relative;
-	height:80vh;
-	background-repeat:no-repeat;
-	background-size:cover;
-	[class*="heading"] {
-		max-width:50%;
-		margin-bottom:10px;
-		color:#fff;
-		text-shadow:1px 1px 2px rgba(0,0,0,0.5);
-	}
-	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
-		height:40vh;
-		[class*="heading"] {
-			font-size:24px;
-			max-width:100%;
-		}
-	}
+    .row.d-flex {
+        height:650px;
+    }
+    .#{$namespace}banner-image {
+        img {
+            max-width:100%;
+            height:auto;
+        }
+    }
+    @include media-breakpoint-down(xs) {
+        .row {
+            height:auto;
+        }
+        .row.d-flex {
+            height:auto;
+        }
+        padding-top:20px;
+        padding-bottom:20px;
+        text-align:center;
+        .#{$namespace}banner-image {
+            img {
+                display:table;
+                margin:0 auto 40px auto;
+            }
+        }
+        .#{$namespace}button {
+            margin:10px auto 0 auto;
+        }
+    }
+    &-3-blocks {
+        .row {
+            height:450px;
+            @include media-breakpoint-down(xs) {
+                height:auto;
+            }
+        }
+    }
+    &-background-home {
+        background:map-get($ui-colors, background-hover) url('../images/home_background.svg') no-repeat left top;
+        @include media-breakpoint-down(xs) {
+            background-image:none;
+            background:map-get($ui-colors, background-hover);
+        }
+    }
+    &-background-chat {
+        background:url('../images/chat_hero_background.svg') no-repeat left -54px;
+        @include media-breakpoint-down(xs) {
+            background-image:none;
+            background:map-get($ui-colors, background-hover);
+        }
+    }
+    &-background-waiting {
+        background:map-get($ui-colors, background-hover) url('../images/waiting_hero_background.svg') no-repeat left top;
+        @include media-breakpoint-down(xs) {
+            background-image:none;
+            background:map-get($ui-colors, background-hover);
+        }
+        &.#{$namespace}banner-image-absolute-left {
+            @include media-breakpoint-down(xs) {
+                margin-top:80px;
+            } 
+            .#{$namespace}banner-image {
+                @include media-breakpoint-down(xs) {
+                    margin-top:-80px;
+                } 
+            }
+        }
+    }
+    
+    &-image-absolute-right {
+        .#{$namespace}banner-image {
+            position:absolute;
+            right:0;
+            padding-right:0;
+            @include media-breakpoint-down(xs) {
+                position:relative;
+                right:auto;
+            }
+        }
+    }
+    &-image-absolute-left {
+        margin-top:12vw;
+        .row.d-flex {
+            height:45vw;
+            max-height:450px;
+        }
+        @include media-breakpoint-down(xs) {
+            .row.d-flex {
+                height:auto;
+                max-height:inherit;
+            }
+        }
+        .#{$namespace}banner-image {
+            position:relative;
+            height:100%;
+            img {
+                position:absolute;
+                bottom:0;
+                @include media-breakpoint-down(xs) {
+                    position:relative;
+                    bottom:auto;
+                }
+            }
+        }
+    }
+    &.#{$namespace}to-padding-bottom-0 {
+        @include media-breakpoint-down(md) {
+            .#{$namespace}banner-image {
+                padding-bottom:0;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            padding-bottom:50px !important;
+        }
+    }
 }
-
 
 
 

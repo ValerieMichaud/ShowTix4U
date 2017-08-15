@@ -5,65 +5,61 @@
 // ********************************************************************************************************************************
 
 
-// Variables
-// *************************************
-$form-error-color : #B91E1E;
-$form-error-font-size: 12;
-$form-error-border-size: 2px;
-
-
 
 // Base
 // *************************************
 .#{$namespace}form {
 	clear:both;
+	margin-bottom:0;
 	> .#{$namespace}form-header {
 		display:block;
 		margin-bottom:5px;
 		font-weight:bold;
 	}
-	> .#{$namespace}form-body { display:block; width: 100%;
+	> .#{$namespace}form-body { 
+		display:block; 
+		width: 100%;
 		&:after {clear:both; content:''; display:block;}
 	}
-	&.#{$namespace}form-error {
-		> .#{$namespace}form-header {color:$form-error-color;}
-		> .#{$namespace}form-body {
-			input, textarea, select {border:$form-error-border-size solid $form-error-color}
-			.#{$namespace}custom-checkbox {
-				.#{$namespace}checkbox-input-custom{ border:$form-error-border-size solid $form-error-color!important; }
-			}
-		}
-	}
 }
-.#{$namespace}form-error-message {display:block; width:100%; clear:both; padding-top:5px; font-size:rem($form-error-font-size); color:$form-error-color;}
-.#{$namespace}note {
-	margin: 0;
-	font-size: rem(13);
-	color: #999;
-}
+
 			
 // Input Text
 // *************************************
 .#{$namespace}form-text {
+	position:relative;
 	input {
-		padding: 10px 10px 6px;
-		color: #212121;
-		background-color: #f3f3f3;
-		border: 1px solid #ccc;
-		box-shadow: 0 1px 0 0 rgba(0,0,0,.4) inset;
-		border-radius: 3px;
+		border-radius:5px;
+		padding:12px 20% 12px 10px;
+		color:map-get($ui-colors, dark-grey);
+		background-color: #fff;
+		border:none;
 		vertical-align: middle;
 		width:100%;
+		font-weight:300;
+		&.#{$namespace}input-border {
+			border:1px solid map-get($ui-colors, purple);
+		}
 	}
-	textarea {
-		padding: 10px 10px 6px;
-		color: #212121;
-		background-color: #f3f3f3;
-		border: 1px solid #ccc;
-		box-shadow: 0 1px 0 0 rgba(0,0,0,.4) inset;
-		border-radius: 3px;
-		vertical-align: middle;
-		width:100%;
+	button {
+		position:absolute;
+		right:5px;
+		top:4px;
+		height:34px;
+		padding:0 10px;
+		border-radius:5px;
+		background:map-get($ui-colors, purple);
+		color:#fff;
+		font-weight:900;
+		text-transform:uppercase;
+	}
+
+	.#{$namespace}banner & {
+		width:80%;
+		@include media-breakpoint-down(xs) {
+			display:table;
+			margin:0 auto;
+		}
 	}
 }
 

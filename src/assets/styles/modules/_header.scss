@@ -1,0 +1,89 @@
+//
+// _header
+//
+// ********************************************************************************************************************************
+
+.#{$namespace}page-header {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100px;
+	z-index:10;
+	transition:all 0.5s ease;
+	background:transparent;
+	.#{$namespace}icon-logo {
+		width:150px;
+		height:48px;
+		fill:map-get($ui-colors, broid-blue);
+		transition:all 0.5s ease;
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			width:130px;
+			height:38px;
+		}
+	}
+	.#{$namespace}page-wrap {
+		position:relative;
+		height:100px;
+		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+			width:100%;
+		}
+	}
+	&.is-floating {
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:50px;
+		background:map-get($ui-colors, background-hover);
+		box-shadow:1px 1px 10px rgba(0,0,0,0.2);
+		.#{$namespace}page-wrap {
+			height:50px;
+		}
+	}
+}
+
+.#{$namespace}brand {
+	position:relative;
+}
+.#{$namespace}join-beta {
+	position:absolute;
+	top:-70px;
+	right:-130px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:30px;
+	padding:0 20px;
+	color:#fff;
+	font-weight:800;
+	font-size:12px;
+	background:map-get($ui-colors, purple);
+	border-radius:3px;
+	transition:top 0.5s ease-in-out;
+	text-decoration:none;
+	&:hover {
+		text-decoration:none;
+	}
+	@include media-breakpoint-down(xs) {
+		right:-105px;
+		padding:0 10px;
+	}
+	&:before {
+		position:absolute;
+		content:'';
+		display:block;
+		top:0;
+		left:-14px;
+		@include triangle(30px, map-get($ui-colors, purple), left);
+	}
+	.is-floating & {
+		top:9px;
+		@include media-breakpoint-down(md) {
+			top:4px;
+		}
+		@include media-breakpoint-down(xs) {
+			top:3px;
+		}
+	}
+}

@@ -7,8 +7,8 @@
 
 // Variables
 // *************************************
-$button-hp: 10px !default; // Left/Right paddings
-$button-vp: 15px !default; // Top/Bottom paddings
+$button-hp: 14px !default; // Left/Right paddings
+$button-vp: 40px !default; // Top/Bottom paddings
 
 
 
@@ -23,15 +23,38 @@ $button-vp: 15px !default; // Top/Bottom paddings
 	cursor: pointer;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	align-self:baseline;
 
 	padding: $button-hp $button-vp;
 	color: #fff;
 	border:0;
-	border-radius:5px;
+	border-radius:7px;
+	text-transform:uppercase;
+	font-size:12px;
+	font-weight:900;
+
+	background-color:map-get($ui-colors, purple);
 
 	@include do-fx(
 		background-color 0.25s linear
 	);
+	&:hover {
+		background-color:map-get($ui-colors, purple-hover);
+	}
+
+	&-b {
+		background-color:map-get($ui-colors, broid-blue);
+		&:hover {
+			background-color:map-get($ui-colors, broid-blue-hover);
+		}
+	}
+
+	&-c {
+		background-color:map-get($ui-colors, green);
+		&:hover {
+			background-color:map-get($ui-colors, green-hover);
+		}
+	}
 }
 
 a.#{$namespace}button {
@@ -50,12 +73,7 @@ a.#{$namespace}button {
 	color:$ui-text-color;
 }
 
-.#{$namespace}button-secondary {
-	background-color:map-get($ui-colors, secondary);
-	&:hover {
-		background-color: lighten(map-get($ui-colors, secondary), 5% );
-	}
-}
+
 
 
 // Functions
