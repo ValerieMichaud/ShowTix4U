@@ -1,0 +1,48 @@
+//
+// _section
+//
+// ********************************************************************************************************************************
+.#{$namespace}section {
+	position:relative;
+	padding:30px 0;
+	&-with-number {
+		padding:60px 0;
+	}
+	&-title {
+		margin:0 0 (2*$padding) 0;
+		font-size:28px;
+		color:#fff;
+		font-weight:300;
+		.#{$namespace}background-secondary-light & {
+			color:map-get($ui-colors, black);
+		}
+	}
+	&-number {
+		position:absolute;
+		top:-30px;
+		left:50%;
+		display:flex;
+		width:60px;
+		height:60px;
+		margin-left:-30px;
+		align-items:center;
+		justify-content:center;
+		font-size:30px;
+		font-weight:800;
+		font-style:normal;
+		border-radius:50%;
+		background:#fff;
+		.#{$namespace}background-primary & {
+			color:map-get($ui-colors, primary);
+		}
+		.#{$namespace}background-primary-medium & {
+			color:map-get($ui-colors, primary-medium);
+		}
+		.#{$namespace}background-primary-dark & {
+			color:map-get($ui-colors, primary-dark);
+		}
+		.#{$namespace}background-primary-darker & {
+			color:map-get($ui-colors, primary-darker);
+		}
+	}
+}

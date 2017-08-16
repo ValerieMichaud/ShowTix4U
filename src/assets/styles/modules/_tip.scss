@@ -1,0 +1,44 @@
+//
+// _tip
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}tip {
+	position:relative;
+	margin-top:60px;
+	margin-bottom:$padding;
+	background:#fff;
+	border-radius:5px;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	&-icon {
+		position:absolute;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		top:-30px;
+		left:-30px;
+		width:90px;
+		height:90px;
+		border-radius:50%;
+		background:map-get($ui-colors, secondary-dark);
+		transform:rotate(-15deg);
+		svg {
+			width:50px;
+			height:50px;
+			fill:#fff;
+		}
+	}
+	p {
+		font-size:18px;
+		font-weight:300;
+		color:map-get($ui-colors, black);
+	}
+}

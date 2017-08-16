@@ -1,0 +1,44 @@
+//
+// _quote
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}quote {
+	position:relative;
+	margin-bottom:$padding;
+	background:#fff;
+	border-radius:5px;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	&-icon {
+		position:absolute;
+		top:0;
+		left:0;
+		svg {
+			fill:map-get($ui-colors, primary);
+		}
+		&-right {
+			top:auto;
+			left:auto;
+			bottom:0;
+			right:0;
+		}
+	}
+	p {
+		font-size:18px;
+		font-weight:300;
+		color:map-get($ui-colors, black);
+	}
+	.#{$namespace}quote-person {
+		text-align:right;
+		font-size:12px;
+		color:map-get($ui-colors, primary);
+	}
+}
