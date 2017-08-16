@@ -248,18 +248,12 @@ gulp.task('ui-js-files', ['clean-scripts'], function() {
     return gulp.src([
             '!' + paths.scripts.src + 'vendors/jquery.min.js',
             '!' + paths.scripts.src + 'core/variables.js',
-            '!' + paths.scripts.src + 'modules/*.js',
             '!' + paths.scripts.src + 'vendors/ie/**/*.js',
             paths.scripts.src + 'core/variables.js', // variables first - very important
             paths.scripts.src + 'core/init.js', // init in second
             paths.scripts.src + 'utils/**/*.js', // everything inside /utils/
-
-            'node_modules/mustache/mustache.js', // mustache
-            //paths.scripts.src + 'vendors/mustache-wax.js', // modal vendor
-            paths.scripts.src + 'vendors/bootstrap.modal.js', // modal vendor
-            paths.scripts.src + 'modules/modal.js', // modal extend
-            paths.scripts.src + 'vendors/jquery.localize.min.js',  // timeline
-            paths.scripts.src + 'vendors/skrollr.min.js',  // skrollr
+            paths.scripts.src + 'vendors/*.js',
+            paths.scripts.src + 'modules/*.js'
         ])
         .pipe(concat(filePrefix + 'ui.js'))
         .pipe(rename({

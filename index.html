@@ -1,30 +1,130 @@
 <!doctype html>
-  <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="dist/assets/images/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="dist/assets/images/apple-touch-icon.png">
+  	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="dist/assets/images/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="dist/assets/images/apple-touch-icon.png">
 
-	<title>ES6 Babel Browserify Boilerplate</title>
+		<title>ES6 Babel Browserify Boilerplate</title>
 
-	<meta name="mobile-web-app-capable" content="yes">
-	<link href="./dist/assets/styles/ko.core.css" rel="stylesheet" />
-  </head>
-  <body>
-	<div class="ko-page">
-		<div class="ko-page-wrap">
-			<div class="row">
-				<div class="col-sm-6">
-					TEST
+		<meta name="mobile-web-app-capable" content="yes">
+		<link href="dist/assets/styles/showtix.core.css" rel="stylesheet" />
+		<script src="dist/assets/scripts/jquery.min.js"> </script>
+		<script src="dist/assets/scripts/showtix.variables.js"> </script>
+  	</head>
+  	<body>
+		<div class="showtix-page">
+
+			<!-- Start: HEADER -->
+			<header class="showtix-page-header">
+				<div class="showtix-page-wrap">
+					<div class="showtix-navigation js-navigation">
+						<ul>
+							<li>
+								<a href="#howitworks" class="js-anchor" data-anchor="#howitworks">How it works</a>
+							</li>
+							<li>
+								<a href="#pricing" class="js-anchor" data-anchor="#pricing">Pricing</a>
+							</li>
+							<li>
+								<a href="#">Sell with us</a>
+							</li>
+							<li>
+								<a href="#contact" class="js-anchor" data-anchor="#contact">Contact</a>
+							</li>
+							<li>
+								<a href="#">Client login</a>
+							</li>
+						</ul>
+					</div>
+					<button class="js-toggle-active showtix-toggle-navigation align-items-center justify-content-center" data-target=".js-navigation">
+						<span></span>
+					</button>
 				</div>
+			</header>
+			<!-- End: HEADER -->
+
+
+			<!-- Start: BODY -->
+			<div class="showtix-page-body">
+
+				<!-- Start : BANNER -->
+				<div class="showtix-banner">
+					<div class="showtix-page-wrap">
+						LOGO
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-6">
+								<div class="showtix-search">
+									<h2 class="showtix-search-title">Find a show</h2>
+									<div class="showtix-search-wrap">
+										<input class="showtix-search-input" type="search" placeholder="Search for a company, venue or event" />
+										<button class="showtix-search-button showtix-button">Search</button>
+									</div>	
+								</div>
+							</div>
+						</div>		
+					</div>
+				</div>
+				<!-- End: BANNER -->
+				
+				
+				<div class="showtix-page-wrap">
+					<div class="row d-flex align-items-stretch">
+						<!-- Start : PARTNERS -->
+						<section class="col-sm-9 showtix-section showtix-to-align-center" style="background:#dedede;">
+							<h1 class="showtix-section-title">From our partners</h1>
+							<div class="row d-flex align-items-stretch">
+								<div class="col-sm-4 showtix-partner">
+									ONE PARTNER
+								</div>
+								<div class="col-sm-4 showtix-partner">
+									ONE PARTNER
+								</div>
+								<div class="col-sm-4 showtix-partner">
+									ONE PARTNER
+								</div>
+							</div>
+						</section>
+						<!-- End: PARTNERS -->
+
+						<div class="col-sm-3 showtix-section showtix-background-primary showtix-to-align-center" style="background:#fff;">
+							<h1 class="showtix-section-title">Upcoming events near you</h1>
+						</div>
+					</div>		
+				</div>
+
+				<!-- Start : HOW IT WORKS -->
+				<div class="showtix-background-primary-medium">
+					<div class="showtix-page-wrap">
+						<section class="showtix-section showtix-to-align-center" style="background:#dedede;">
+							<h1 class="showtix-section-title">How it works</h1>
+							<div class="row">
+								<div class="col-sm-3">
+									LOGO
+								</div>
+								<div class="col-sm-9">
+									CONTENT
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!-- End : HOW IT WORKS -->
 			</div>
+			<!-- End: BODY -->
+
+
+			<!-- Start: FOOTER -->
+			<footer class="showtix-page-footer">
+				<div class="showtix-page-wrap">
+					
+				</div>
+			</footer>
+			<!-- End: FOOTER -->
 		</div>
-	</div>
-	<script src="./dist/app.js"> </script>
-	<script>
-	  app();
-	</script>
-  </body>
+		<script src="dist/assets/scripts/showtix.ui.js"> </script>
+  	</body>
 </html>

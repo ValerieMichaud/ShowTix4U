@@ -8,7 +8,7 @@ ajax.onload = function(e) {
 	document.body.insertBefore(div, document.body.childNodes[0]);
 }
 
-MY_PROJECT_NAME.utils.broid = {
+MY_PROJECT_NAME.utils.showtix = {
 	
 };
 
@@ -34,7 +34,7 @@ $(function(){
 	$.support.transition = MY_PROJECT_NAME.utils.global.transitionEnd();
 
 	// init all swipers
-    doInitSwiper();
+    //doInitSwiper();
 
 	// Toggle active class
 	$('.js-toggle-active').click(function(){
@@ -45,15 +45,15 @@ $(function(){
 	});
 
 	if($(window).scrollTop() > 50){
-		$('.broid-page-header').addClass('is-floating');
+		$('.showtix-page-header').addClass('is-floating');
 	}
 
 	$(window).scroll(function(){
 		var scrollTop = $(this).scrollTop()
 		if(scrollTop > 50){
-			$('.broid-page-header').addClass('is-floating');
+			$('.showtix-page-header').addClass('is-floating');
 		} else {
-			$('.broid-page-header').removeClass('is-floating');
+			$('.showtix-page-header').removeClass('is-floating');
 		}
 	});
 
@@ -66,6 +66,7 @@ $(function(){
 	    if($('.js-navigation').hasClass('is-active')){
 	    	$('.js-navigation').removeClass('is-active')
 	    }
+	    return false;
 	});
 
 

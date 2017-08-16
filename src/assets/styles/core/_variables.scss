@@ -42,7 +42,7 @@ $ui-font-base-size: 14px !default;
 // [bourbon] Sets same default font size for Bourbon functions
 $em-base: $ui-font-base-size;
 
-$ui-font-family: 'Lato', sans-serif !default;
+$ui-font-family: 'Libre Franklin', sans-serif !default;
 $ui-font-sizes: (
 	1 : rem(40),
 	2 : rem(32),
@@ -55,18 +55,15 @@ $ui-font-sizes: (
 // Color list
 $ui-colors: (
 	black : 					#13171a,
-	dark-grey : 				#657686,
-	background-dark-ocean :     #2e97d5,
-	background-ocean :			#35a1e2,
-	background-hover :			#f1faff,
-	highlight :					#f5f2b3,
-	broid-blue :				#1da1f2,
-	broid-blue-hover :			#0278c7,
-	green :						#53c6ab,
-	green-hover :				#0bb58c,
-	purple :					#274e87,
-	purple-hover :				#2560b6,
-	pink :						#fe8b84
+	primary-light : 			#8a91c1,
+	primary :					#5c649b,
+	primary-medium :     		#485082,
+	primary-dark :				#262e5d,
+	primary-darker :			#181d3c,
+	secondary-light :			#eeeeee,
+	secondary :					#d7d6d6,
+	secondary-medium :			#444444,
+	secondary-dark :			#353535
 
 ) !default;
 
