@@ -48,6 +48,7 @@ $(function(){
 	$('.js-toggle-active').click(function(){
 		var $target = $($(this).data('target'));
 		$(this).toggleClass(MY_PROJECT_NAME.s_active);
+		$target.siblings().removeClass(MY_PROJECT_NAME.s_active);
 		$target.toggleClass(MY_PROJECT_NAME.s_active);
 		return false;
 	});
@@ -76,6 +77,20 @@ $(function(){
 	    }
 	    return false;
 	});
+
+	// Truncate
+	if($('.js-truncate').length){
+		$('.js-truncate').each(function(){
+			var $this = $(this),
+				text = $this.text(),
+				limit = 60;
+			if(text.length > limit){
+				var newText = text.substring(0,limit) + "...";
+				$this.text(newText);
+			}
+		});
+	}
+	
 
 
 	

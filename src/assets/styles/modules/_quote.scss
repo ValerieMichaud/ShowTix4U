@@ -13,12 +13,17 @@
 // *************************************
 .#{$namespace}quote {
 	position:relative;
-	//margin-bottom:60px;
 	margin-right:$padding;
 	margin-left:$padding;
 	background:#fff;
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	@include media-breakpoint-up(lg) {
+		margin-bottom:60px;
+	}
+	@include media-breakpoint-down(sm) {
+		margin-bottom:60px;
+	}
 	&-icon {
 		position:absolute;
 		top:-18px;

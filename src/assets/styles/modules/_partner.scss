@@ -1,0 +1,73 @@
+//
+// _quote
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}partner {
+	position:relative;
+	background:#fff;
+	border-radius:5px;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	@include media-breakpoint-down(sm) {
+		margin-bottom:$padding;
+	}
+	&-header {
+		display:flex;
+		padding:$padding;
+		align-items:center;
+		justify-content:center;
+	}
+	&-body {
+		&-image {
+			width:100%;
+		}
+		&-title {
+			display:inline-flex;
+			padding:$padding;
+			text-align:left;
+			text-transform:uppercase;
+			font-weight:500;
+			color:map-get($ui-colors, black);
+			text-decoration:none;
+			&:hover {
+				color:map-get($ui-colors, primary-medium);
+			}
+		}
+	}
+	&-footer {
+		border-top:1px solid #ccc;
+		padding:$padding;
+		&-secondary {
+			display:flex;
+			align-items:center;
+			justify-content:start;
+			padding-bottom:$padding;
+			&-image {
+				width:100%;
+			}
+			&-title {
+				display:inline-flex;
+				padding-left:$padding;
+				text-align:left;
+				font-weight:500;
+				color:map-get($ui-colors, black);
+				font-size:12px;
+				text-decoration:none;
+				&:hover {
+					color:map-get($ui-colors, primary-dark);
+				}
+			}
+			&:last-child {
+				padding-bottom:0;
+			}
+		}
+	}
+}

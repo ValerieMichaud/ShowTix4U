@@ -4,9 +4,11 @@
 // ********************************************************************************************************************************
 .#{$namespace}section {
 	position:relative;
-	padding:30px 0;
+	padding-top:30px;
+	padding-bottom:30px;
 	&-with-number {
-		padding:60px 0;
+		padding-top:60px;
+		padding-bottom:60px;
 	}
 	&-title {
 		margin:0 0 (2*$padding) 0;
@@ -16,6 +18,12 @@
 		.#{$namespace}background-secondary-light & {
 			color:map-get($ui-colors, black);
 		}
+	}
+	&-intro {
+		margin:0 0 (2*$padding) 0;
+		font-size:16px;
+		color:#fff;
+		font-weight:300;
 	}
 	&-number {
 		position:absolute;
