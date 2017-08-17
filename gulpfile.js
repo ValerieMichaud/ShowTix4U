@@ -285,7 +285,10 @@ gulp.task('move-locale', ['ui-js-files'], function() {
 // SVG task... (Combines all svg sources into single svg file with <symbol> elements)
 gulp.task('tasks-svg', ['clean-svgs'], function () {
     return gulp
-        .src(paths.svg.src + '**/*.svg')
+        .src([
+            '!' + paths.svg.src + 'logo.svg',
+            paths.svg.src + '**/*.svg'
+        ])
         .pipe(svgmin(function (file) {
             var prefix = path.basename(file.relative, path.extname(file.relative));
             return {
@@ -333,6 +336,58 @@ gulp.task('tasks-svg', ['clean-svgs'], function () {
         .pipe(gulp.dest(paths.svg.dest));
 });
 
+// SVG task... (Combines all svg sources into single svg file with <symbol> elements)
+gulp.task('tasks-svg-logo', ['tasks-svg'], function () {
+    return gulp
+        .src([
+            paths.svg.src + '**/logo.svg'
+        ])
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [
+                    {
+                        cleanupIDs: {
+                            prefix: prefix + '-',
+                            minify: true
+                        }
+                    },
+                    {
+                        removeComments: true
+                    },
+                    {
+                        convertStyleToAttrs: true
+                    },
+                    {
+                        removeHiddenElems: true
+                    },
+                    {
+                        removeStyleElement: false
+                    },
+                    {
+                        removeAttrs: false
+                    },
+                    {
+                        removeUselessStrokeAndFill: true
+                    },
+                    {
+                        collapseGroups: true
+                    }
+                ]
+            }
+        }))
+        .pipe(rename({prefix: 'icon-'}))
+        .pipe(svgstore())
+        .pipe(cheerio({
+            run: function ($, file) {
+                $('svg').addClass(classPrefix + 'to-hide');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(rename("logo.svg"))
+        .pipe(gulp.dest(paths.svg.dest));
+});
+
 
 // Move images from src to dist
 gulp.task('move-imgs', ['clean-imgs'], function() {
@@ -361,7 +416,7 @@ gulp.task('css', ['tasks-css', 'css-purify']);
 gulp.task('js', ['move-jquery', 'move-variables', 'ui-js-files', 'move-locale']);
 
 // SVG
-gulp.task('svg', ['tasks-svg']);
+gulp.task('svg', ['tasks-svg', 'tasks-svg-logo']);
 
 // IMAGES
 gulp.task('images', ['move-imgs']);
@@ -369,51 +424,5 @@ gulp.task('images', ['move-imgs']);
 // CSS + JS + SVG
 gulp.task('web-deploy', ['css', 'js', 'svg', 'images']);
 
-
-// Create arguments ref : https://www.sitepoint.com/pass-parameters-gulp-tasks/
-const arg = (argList => {
-  let arg = {}, a, opt, thisOpt, curOpt;
-  for (a = 0; a < argList.length; a++) {
-
-    thisOpt = argList[a].trim();
-    opt = thisOpt.replace(/^\-+/, '');
-
-    if (opt === thisOpt) {
-      // argument value
-      if (curOpt) arg[curOpt] = opt;
-      curOpt = null;
-    }
-    else {
-      // argument name
-      curOpt = opt;
-      arg[curOpt] = true;
-
-    }
-  }
-  return arg;
-})(process.argv);
-
-gulp.task('skin', function(){
-    gutil.log(arg.course);
-
-    gutil.log(gutil.colors.yellow('Gulping Skin CSS...'));
-    gulp.src(paths.styles.src + 'skins/' + arg.course + '.scss')
-        .pipe(sass({errLogToConsole: true}).on('error', sass.logError))
-        .pipe(csslint(csslintWarning))
-        .pipe(csslint.reporter())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gsize({title:"CSS", showFiles: true}))
-        .pipe(rename({
-            basename: 'timeline'
-        }))
-        .pipe(bless())
-        .pipe(replace('@charset "UTF-8";', ''))
-        //.pipe(inject.prepend('<!-- Created: ' + Date() + ' -->\n'))
-        .pipe(cssmin())
-        .pipe(gulp.dest('courses/' + arg.course + '/timeline/'));
-});
 
 

@@ -7,6 +7,14 @@ ajax.onload = function(e) {
 	div.innerHTML = ajax.responseText;
 	document.body.insertBefore(div, document.body.childNodes[0]);
 }
+var ajaxLogo = new XMLHttpRequest();
+ajaxLogo.open("GET", MY_PROJECT_NAME.s_svgLogoPath, true);
+ajaxLogo.send();
+ajaxLogo.onload = function(e) {
+	var div = document.createElement("div");
+	div.innerHTML = ajaxLogo.responseText;
+	document.body.insertBefore(div, document.body.childNodes[0]);
+}
 
 MY_PROJECT_NAME.utils.showtix = {
 	

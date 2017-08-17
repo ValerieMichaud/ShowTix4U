@@ -5,8 +5,8 @@ MY_PROJECT_NAME.utils = {};
 MY_PROJECT_NAME.global = {};
 
 // Projet name prefix and class
-MY_PROJECT_NAME.s_namespacePrefix = 'broid-';
-MY_PROJECT_NAME.s_namespaceClass = '.broid-';
+MY_PROJECT_NAME.s_namespacePrefix = 'showtix-';
+MY_PROJECT_NAME.s_namespaceClass = '.showtix-';
 
 MY_PROJECT_NAME.s_active = 'is-active';
 
@@ -15,6 +15,7 @@ MY_PROJECT_NAME.s_language = (document.documentElement.lang || (window.navigator
 
 // Set SVG path in project - to be overwritten in /docs/ folder
 MY_PROJECT_NAME.s_svgPath = getSVGpath();
+MY_PROJECT_NAME.s_svgLogoPath = getSVGLogopath();
 
 // Mobile detection object
 MY_PROJECT_NAME.o_isMobile = {
@@ -81,6 +82,17 @@ MY_PROJECT_NAME.o_browser = {
 function getSVGpath(){
 	var urlpath = document.getElementsByTagName('meta')['meta-svgpath'];
 	var svgfilepath = "dist/assets/svg/icons.svg";
+	var startfilepath = "./";
+	if ( typeof urlpath !== "undefined" ) {
+		startfilepath =  urlpath.getAttribute('content');
+		urlpath.parentNode.removeChild(urlpath);
+	}
+	return startfilepath + svgfilepath;
+}
+
+function getSVGLogopath(){
+	var urlpath = document.getElementsByTagName('meta')['meta-svgpath'];
+	var svgfilepath = "dist/assets/svg/logo.svg";
 	var startfilepath = "./";
 	if ( typeof urlpath !== "undefined" ) {
 		startfilepath =  urlpath.getAttribute('content');
