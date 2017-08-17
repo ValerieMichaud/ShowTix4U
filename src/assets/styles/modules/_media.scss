@@ -1,0 +1,42 @@
+//
+// _media
+//
+// ********************************************************************************************************************************
+
+
+// Variables
+// *************************************
+
+
+
+// Base
+// *************************************
+.#{$namespace}media {
+	position:relative;
+	display:flex;
+	align-items:stretch;
+	text-align:left;
+	margin-bottom:$padding;
+	&-image {
+		padding-right:$padding;
+		svg {
+			width:50px;
+			height:50px;
+			fill:#fff;
+		}
+	}
+	&-content {
+		p {
+			margin-top:0;
+			font-size:12px;
+			font-weight:500;
+			color:#fff;
+			span {
+				display:block;
+				font-size:16px;
+				font-weight:800;
+			}
+		}
+	}
+	
+}

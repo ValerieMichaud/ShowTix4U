@@ -13,8 +13,10 @@
 // *************************************
 .#{$namespace}tip {
 	position:relative;
-	margin-top:60px;
+	margin-right:$padding;
+	margin-left:$padding;
 	margin-bottom:$padding;
+	padding-top:30px;
 	background:#fff;
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
@@ -41,4 +43,5 @@
 		font-weight:300;
 		color:map-get($ui-colors, black);
 	}
+
 }

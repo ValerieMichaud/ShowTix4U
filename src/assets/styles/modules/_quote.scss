@@ -13,22 +13,27 @@
 // *************************************
 .#{$namespace}quote {
 	position:relative;
-	margin-bottom:$padding;
+	//margin-bottom:60px;
+	margin-right:$padding;
+	margin-left:$padding;
 	background:#fff;
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
 	&-icon {
 		position:absolute;
-		top:0;
-		left:0;
+		top:-18px;
+		left:-25px;
 		svg {
-			fill:map-get($ui-colors, primary);
+			width:50px;
+			height:40px;
+			fill:map-get($ui-colors, primary-light);
 		}
 		&-right {
 			top:auto;
 			left:auto;
-			bottom:0;
-			right:0;
+			bottom:-18px;
+			right:-25px;
+			transform:rotate(180deg);
 		}
 	}
 	p {

@@ -16,22 +16,15 @@ $button-vp: 40px !default; // Top/Bottom paddings
 // *************************************
 .#{$namespace}button {
 	position: relative;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	line-height: normal;
-	cursor: pointer;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	align-self:baseline;
-
-	padding: $button-hp $button-vp;
+	display:inline-flex;
+	height:50px;
+	padding:0 30px;
+	align-items:center;
+	justify-content:center;
 	color: map-get($ui-colors, primary-medium);
 	border:0;
-	text-transform:uppercase;
 	font-size:12px;
 	font-weight:800;
-
 	background-color:map-get($ui-colors, primary-light);
 
 	@include do-fx(
@@ -39,32 +32,13 @@ $button-vp: 40px !default; // Top/Bottom paddings
 	);
 	&:hover {
 		background-color:map-get($ui-colors, primary);
-	}
-
-	&-c {
-		background-color:map-get($ui-colors, green);
-		&:hover {
-			background-color:map-get($ui-colors, green-hover);
-		}
+		color:#fff;
 	}
 }
 
 a.#{$namespace}button {
 	text-decoration: none;
 }
-
-
-
-// Themes
-// *************************************
-.#{$namespace}button-outline {
-	border:2px solid #fff;
-}
-.#{$namespace}button-outline-b {
-	border-color:$ui-text-color;
-	color:$ui-text-color;
-}
-
 
 
 
@@ -75,28 +49,6 @@ a.#{$namespace}button {
 	display: block;
 	width: 100%;
 }
-
-// Button primes : Larger padding buttons
-.#{$namespace}button-prime {
-	padding: $button-hp*2 $button-vp*2;
-}
-
-// Button mini : Smaller padding buttons
-.#{$namespace}button-mini {
-	padding: $button-hp/2 $button-vp/2;
-}
-
-// Button with SVG icon
-.#{$namespace}button-has-svg-icon {
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	.#{$namespace}icon {
-		width:25px;
-		height:25px;
-	}
-}
-
 
 // Other
 // *************************************
