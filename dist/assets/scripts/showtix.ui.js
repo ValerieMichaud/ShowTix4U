@@ -46,10 +46,17 @@ $(function(){
 
 	// Toggle active class
 	$('.js-toggle-active').click(function(){
-		var $target = $($(this).data('target'));
-		$(this).toggleClass(MY_PROJECT_NAME.s_active);
+		var $this = $(this),
+			$target = $($this.data('target'));
+		$this.toggleClass(MY_PROJECT_NAME.s_active);
 		$target.siblings().removeClass(MY_PROJECT_NAME.s_active);
 		$target.toggleClass(MY_PROJECT_NAME.s_active);
+
+		// Change label
+		if($this.data('active')){
+			$target.hasClass(MY_PROJECT_NAME.s_active) ? $this.text($this.data('active')) : $this.text($this.data('start'))
+		}
+
 		return false;
 	});
 

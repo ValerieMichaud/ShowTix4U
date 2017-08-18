@@ -21,9 +21,10 @@ $button-vp: 40px !default; // Top/Bottom paddings
 	padding:0 30px;
 	align-items:center;
 	justify-content:center;
+	text-align:center;
 	color: map-get($ui-colors, primary-medium);
 	border:0;
-	font-size:12px;
+	font-size:14px;
 	font-weight:800;
 	background-color:map-get($ui-colors, primary-light);
 
@@ -33,6 +34,19 @@ $button-vp: 40px !default; // Top/Bottom paddings
 	&:hover {
 		background-color:map-get($ui-colors, primary);
 		color:#fff;
+	}
+
+	&-secondary {
+		text-transform:uppercase;
+	}
+
+	&-secondary {
+		color:#fff;
+		background-color:map-get($ui-colors, secondary-dark);
+		&:hover {
+			background-color:map-get($ui-colors, black);
+			color:#fff;
+		}
 	}
 }
 
@@ -46,7 +60,7 @@ a.#{$namespace}button {
 // *************************************
 // Button full : Full width buttons
 .#{$namespace}button-full {
-	display: block;
+	display:flex;
 	width: 100%;
 }
 
