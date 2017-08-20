@@ -42,7 +42,7 @@ $(function(){
 	$.support.transition = MY_PROJECT_NAME.utils.global.transitionEnd();
 
 	// init all swipers
-    //doInitSwiper();
+    doInitSwiper();
 
 	// Toggle active class
 	$('.js-toggle-active').click(function(){

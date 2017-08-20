@@ -63,73 +63,18 @@ MY_PROJECT_NAME.o_swiper = {
 		autoplayDisableOnInteraction : true
 	},
     o_swiperConfig:{
-		"channels":{
+		"partners":{
 			direction: 'horizontal',
-			slidesPerView: 5,
-			centeredSlides: true,
+			slidesPerView: 3,
+			spaceBetween: 30,
         	paginationClickable: true,
-        	spaceBetween: 50,
+        	simulateTouch: false,
         	breakpoints: {
-				1024: {
-					slidesPerView: 5
-				},
-				768: {
-					slidesPerView: 4
-				},
-				640: {
-					slidesPerView: 2
-				},
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 20
-				}
-			}
-		},
-		"support":{
-			direction: 'horizontal',
-			slidesPerView: 5,
-			paginationClickable: true,
-			pagination: '.swiper-pagination-support',
-        	spaceBetween: 60,
-        	breakpoints: {
-				1024: {
-					slidesPerView: 5
-				},
-				768: {
-					slidesPerView: 4
-				},
-				640: {
-					slidesPerView: 2
-				},
-				320: {
+				767: {
 					slidesPerView: 1
 				}
 			}
-		},
-		"testimonials":{
-			direction: 'horizontal',
-			slidesPerView: 3,
-			centeredSlides: true,
-        	spaceBetween: 80,
-        	breakpoints: {
-				1024: {
-					slidesPerView: 1,
-					spaceBetween: 60,
-				},
-				768: {
-					slidesPerView: 1,
-					spaceBetween: 40
-				},
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 20
-				},
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 20
-				}
-			}
-		},
+		}
     },
 	i_swiperCount: 0,
 	f_updateAccessibilityLabels: function(swiperIndex, swiperID, config) {
@@ -184,7 +129,7 @@ function doInitSwiper(){
 		});
 
 		//NOTE - Attach handler on a specific Swiper
-		window['swiper_channels'].slideTo(2);
+		//window['swiper_channels'].slideTo(2);
 	}
 
 

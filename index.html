@@ -19,25 +19,33 @@
 
 			<!-- Start: HEADER -->
 			<header class="showtix-page-header">
+				<div class="showtix-brand showtix-hide-up-lg">
+					<svg class="showtix-icon showtix-icon-logo">
+				    	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+				    </svg>
+				</div>
 				<div class="showtix-page-wrap">
 					<div class="showtix-navigation js-navigation">
-						<ul>
-							<li>
-								<a href="#howitworks" class="js-anchor" data-anchor="#howitworks">How it works</a>
-							</li>
-							<li>
-								<a href="#pricing" class="js-anchor" data-anchor="#pricing">Pricing</a>
-							</li>
-							<li>
-								<a href="#">Sell with us</a>
-							</li>
-							<li>
-								<a href="#contact" class="js-anchor" data-anchor="#contact">Contact</a>
-							</li>
-							<li>
-								<a href="#">Client login</a>
-							</li>
-						</ul>
+						<div class="showtix-navigation-wrap">
+							<ul>
+								<li>
+									<a href="#howitworks" class="js-anchor" data-anchor="#howitworks">How it works</a>
+								</li>
+								<li>
+									<a href="#pricing" class="js-anchor" data-anchor="#pricing">Pricing</a>
+								</li>
+								<li>
+									<a href="#">Sell with us</a>
+								</li>
+								<li>
+									<a href="#contact" class="js-anchor" data-anchor="#contact">Contact</a>
+								</li>
+								<li>
+									<a href="#">Client login</a>
+								</li>
+							</ul>
+						</div>	
+						<div class="showtix-navigation-overlay"></div>
 					</div>
 					<button class="js-toggle-active showtix-toggle-navigation align-items-center justify-content-center" data-target=".js-navigation">
 						<span></span>
@@ -80,89 +88,99 @@
 						<!-- Start : PARTNERS -->
 						<section class="col-md-8 showtix-section showtix-background-secondary-light showtix-to-align-center">
 							<h1 class="showtix-section-title">From our partners</h1>
-							<div class="row d-flex align-items-stretch">
-								<div class="col-md-6 col-lg-4">
-									<div class="showtix-partner">
-										<div class="showtix-partner-header">
-											<a href="#" target="_blank">PLAYBILL</a>
-										</div>
-										<div class="showtix-partner-body">
-											<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-											<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
-												See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-											</a>
-										</div>
-										<div class="showtix-partner-footer">
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+							<!-- Swiper -->
+						    <div class="swiper-container" data-config="partners">
+						        <div class="swiper-wrapper">
+						            <div class="swiper-slide">
+						            	<div class="showtix-partner">
+											<div class="showtix-partner-header">
+												<a href="#" target="_blank">PLAYBILL</a>
+											</div>
+											<div class="showtix-partner-body">
+												<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+												<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
 													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
 												</a>
 											</div>
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+											<div class="showtix-partner-footer">
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
+											</div>
+										</div>
+						            </div>
+						            <div class="swiper-slide">
+						            	<div class="showtix-partner">
+											<div class="showtix-partner-header">
+												<a href="#" target="_blank">PLAYBILL</a>
+											</div>
+											<div class="showtix-partner-body">
+												<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+												<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
 													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
 												</a>
 											</div>
+											<div class="showtix-partner-footer">
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="showtix-partner">
-										<div class="showtix-partner-header">
-											<a href="#" target="_blank">PLAYBILL</a>
-										</div>
-										<div class="showtix-partner-body">
-											<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-											<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
-												See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-											</a>
-										</div>
-										<div class="showtix-partner-footer">
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+						            </div>
+						            <div class="swiper-slide">
+						            	<div class="showtix-partner">
+											<div class="showtix-partner-header">
+												<a href="#" target="_blank">PLAYBILL</a>
+											</div>
+											<div class="showtix-partner-body">
+												<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+												<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
 													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
 												</a>
 											</div>
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
-													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-												</a>
+											<div class="showtix-partner-footer">
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
+												<div class="showtix-partner-footer-secondary">
+													<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
+													<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
+														See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
+													</a>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="showtix-partner">
-										<div class="showtix-partner-header">
-											<a href="#" target="_blank">PLAYBILL</a>
-										</div>
-										<div class="showtix-partner-body">
-											<a href="#" target="_blank"><img class="showtix-partner-body-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-											<a href="#" target="_blank" class="showtix-partner-body-title js-truncate">
-												See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-											</a>
-										</div>
-										<div class="showtix-partner-footer">
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
-													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-												</a>
-											</div>
-											<div class="showtix-partner-footer-secondary">
-												<a href="#" target="_blank"><img class="showtix-partner-footer-secondary-image" src="http://static.playbill.com/dims4/default/80be940/2147483647/crop/1000x500%2B0%2B0/resize/400x200/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2Fa3%2F20%2F4af73d0b49c8a20a424b8227aaf7%2Fhamilton-la-opening-night-2017-27-hr.jpg" /></a>
-												<a href="#" target="" class="showtix-partner-footer-secondary-title js-truncate">
-													See Lin-Manuel Miranda Make a Special Appearance at the L.A. Opening of Hamilton
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						            </div>
+						        </div>
+						        <div class="swiper-button-next showtix-hide-up-md">
+						        	Next
+						        </div>
+        						<div class="swiper-button-prev showtix-hide-up-md">
+        							Prev
+        						</div>
+						        <div class="swiper-pagination showtix-hide-up-md"></div>
+						    </div>
 						</section>
 						<!-- End: PARTNERS -->
 
