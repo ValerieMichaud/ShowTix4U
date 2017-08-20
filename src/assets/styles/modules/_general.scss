@@ -20,6 +20,7 @@ body {
 		transition:max-height 0.5s ease-in-out;
 		&.is-active {
 			max-height:2000px;
+			padding-bottom:30px;
 		}
 		&:after {
 			position:absolute;
