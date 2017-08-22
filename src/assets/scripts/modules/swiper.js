@@ -74,6 +74,21 @@ MY_PROJECT_NAME.o_swiper = {
 					slidesPerView: 1
 				}
 			}
+		},
+		"upcoming":{
+			direction: 'horizontal',
+			spaceBetween: 30,
+			slidesPerView: 2,
+			pagination: '.swiper-pagination-upcoming',
+			nextButton: '.swiper-button-next-upcoming',
+			prevButton: '.swiper-button-prev-upcoming',
+        	paginationClickable: true,
+        	simulateTouch: false,
+        	breakpoints: {
+				767: {
+					slidesPerView: 1
+				}
+			}
 		}
     },
 	i_swiperCount: 0,
