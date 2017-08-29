@@ -38,5 +38,11 @@
 			}
 		}
 	}
-	
+	.#{$namespace}background-secondary-light & {
+		&-content {
+			p {
+				color:map-get($ui-colors, black);
+			}
+		}
+	}
 }

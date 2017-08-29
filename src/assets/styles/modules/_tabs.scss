@@ -39,7 +39,7 @@
 		height:auto;
 		max-height:0;
 		overflow:hidden;
-		transition:max-height 0.5s ease-in-out;
+		xtransition:max-height 0.5s ease-in-out;
 		&.is-active {
 			max-height:2000px;
 		}
