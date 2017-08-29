@@ -4,5 +4,13 @@
 // ********************************************************************************************************************************
 
 .#{$namespace}page-footer {
-	
+	p, a {
+		color:#fff;
+		font-size:16px;
+		text-decoration:none;
+		strong {
+			font-size:18px;
+			font-weight:800;
+		}
+	}
 }

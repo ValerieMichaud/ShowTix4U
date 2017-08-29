@@ -5318,23 +5318,30 @@ MY_PROJECT_NAME.o_swiper = {
         	paginationClickable: true,
         	simulateTouch: false,
         	breakpoints: {
-				767: {
-					slidesPerView: 1
+				480: {
+					slidesPerView: 1,
+					spaceBetween: 0
 				}
 			}
 		},
 		"upcoming":{
 			direction: 'horizontal',
 			spaceBetween: 30,
-			slidesPerView: 2,
+			slidesPerView: 6,
 			pagination: '.swiper-pagination-upcoming',
 			nextButton: '.swiper-button-next-upcoming',
 			prevButton: '.swiper-button-prev-upcoming',
         	paginationClickable: true,
         	simulateTouch: false,
         	breakpoints: {
+        		1024: {
+        			slidesPerView: 4
+        		},
 				767: {
-					slidesPerView: 1
+					slidesPerView: 3
+				},
+				480: {
+					slidesPerView: 2
 				}
 			}
 		}
