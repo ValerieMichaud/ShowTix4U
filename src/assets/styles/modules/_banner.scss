@@ -7,6 +7,13 @@
 .#{$namespace}banner {
 	min-height:250px;
 	padding-top:70px;
+	padding-left:120px;
+	padding-right:120px;
 	background:url('../images/banner.jpg') no-repeat top center;
 	background-size:cover;
+	@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
+		padding-top:70px;
+		padding-left:20px;
+		padding-right:20px;
+	}
 }
