@@ -96,7 +96,17 @@ MY_PROJECT_NAME.o_swiper = {
 					slidesPerView: 2
 				}
 			}
-		}
+		},
+		"tabs":{
+			direction: 'horizontal',
+			slidesPerView: 4,
+        	simulateTouch: false,
+        	breakpoints: {
+				767: {
+					slidesPerView: 1
+				}
+			}
+		},
     },
 	i_swiperCount: 0,
 	f_updateAccessibilityLabels: function(swiperIndex, swiperID, config) {
@@ -151,7 +161,9 @@ function doInitSwiper(){
 		});
 
 		//NOTE - Attach handler on a specific Swiper
-		//window['swiper_channels'].slideTo(2);
+		window['swiper_tabs'].on('onSlideChangeStart', function(swipe){
+			$('[data-config="tabs"]').find('.swiper-slide-active a').trigger('click');
+		});
 	}
 
 

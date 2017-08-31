@@ -14,28 +14,23 @@
 // *************************************
 .#{$namespace}tabs {
 	margin-bottom:60px;
-	&-navigation {
-		margin-bottom:0;
-		display:flex;
-		align-items:center;
-		@extend %bulletless;
-		li {
-			padding:$padding;
-			margin-right:$padding;
-			&.is-active {
-				@extend .#{$namespace}background-primary-light;
-			}
-			.#{$namespace}icon {
-				width:100px;
-				height:100px;
-				fill:#fff;
-			}
+	.#{$namespace}tab-navigation {
+		padding:$padding;
+		margin-right:$padding;
+		@include media-breakpoint-down(sm) {
+			margin-right:0;
+		}
+		&.is-active {
+			@extend .#{$namespace}background-primary-light;
+		}
+		.#{$namespace}icon {
+			width:100px;
+			height:100px;
+			fill:#fff;
 		}
 	}
-	@include media-breakpoint-down(sm) {
-		
-	}
 }
+
 .#{$namespace}tabs-content {
 	padding:$padding;
 	.#{$namespace}tab-content {
