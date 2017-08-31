@@ -13,24 +13,27 @@
 // Base
 // *************************************
 .#{$namespace}tabs {
+	margin-bottom:60px;
 	&-navigation {
+		margin-bottom:0;
 		display:flex;
 		align-items:center;
 		@extend %bulletless;
 		li {
+			padding:$padding;
 			margin-right:$padding;
 			&.is-active {
 				@extend .#{$namespace}background-primary-light;
 			}
 			.#{$namespace}icon {
-				width:50px;
-				height:50px;
+				width:100px;
+				height:100px;
 				fill:#fff;
 			}
 		}
 	}
 	@include media-breakpoint-down(sm) {
-		margin-bottom:$padding;
+		
 	}
 }
 .#{$namespace}tabs-content {

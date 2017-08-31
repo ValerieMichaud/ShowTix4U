@@ -17,7 +17,9 @@
 	border-radius:5px;
 	border:1px solid #ccc;
 	@include media-breakpoint-down(sm) {
+		margin-right:40px;
 		margin-bottom:$padding;
+		margin-left:40px;
 	}
 	&-header {
 		display:flex;

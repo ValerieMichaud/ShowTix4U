@@ -21,6 +21,7 @@
 	}
 	&.is-floating {
 		background:map-get($ui-colors, primary);
+		box-shadow:1px 1px 15px rgba(0,0,0,0.5);
 		@include media-breakpoint-down($ui-mobile-nav-breakpoint) {
 			.#{$namespace}brand {
 				opacity:1;

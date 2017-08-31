@@ -5318,7 +5318,7 @@ MY_PROJECT_NAME.o_swiper = {
         	paginationClickable: true,
         	simulateTouch: false,
         	breakpoints: {
-				480: {
+				767: {
 					slidesPerView: 1,
 					spaceBetween: 0
 				}
