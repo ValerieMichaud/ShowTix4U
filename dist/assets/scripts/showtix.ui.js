@@ -82,8 +82,10 @@ $(function(){
 		$('html, body').animate({
 	        scrollTop: anchorTop - 25
 	    }, 500);
-	    if($('.js-navigation').hasClass('is-active')){
-	    	$('.js-navigation').removeClass('is-active')
+	    $('.js-navigation').find('.' + MY_PROJECT_NAME.s_active).removeClass(MY_PROJECT_NAME.s_active);
+	    $(this).addClass(MY_PROJECT_NAME.s_active);
+	    if($('.js-navigation').hasClass(MY_PROJECT_NAME.s_active)){
+	    	$('.js-navigation').removeClass(MY_PROJECT_NAME.s_active)
 	    }
 	    return false;
 	});
