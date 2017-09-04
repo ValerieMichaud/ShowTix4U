@@ -13,35 +13,32 @@
 // *************************************
 .#{$namespace}tip {
 	position:relative;
+	display:flex;
+	align-items:center;
 	margin-right:$padding;
 	margin-left:$padding;
 	margin-bottom:$padding;
-	padding-top:30px;
-	background:#fff;
+	background:map-get($ui-colors, secondary-dark);
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	transform:rotate(6deg);
+	@include media-breakpoint-down(sm) {
+		transform:rotate(3deg);
+		margin-right:20px;
+		margin-left:20px;
+	}
 	&-icon {
-		position:absolute;
-		display:flex;
-		align-items:center;
-		justify-content:center;
-		top:-30px;
-		left:-30px;
-		width:90px;
-		height:90px;
-		border-radius:50%;
-		background:map-get($ui-colors, secondary-dark);
-		transform:rotate(-15deg);
 		svg {
-			width:50px;
-			height:50px;
+			width:80px;
+			height:80px;
 			fill:#fff;
 		}
 	}
 	p {
+		margin:0;
 		font-size:18px;
 		font-weight:300;
-		color:map-get($ui-colors, black);
+		color:#fff;
 	}
 
 }

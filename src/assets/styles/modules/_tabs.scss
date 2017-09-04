@@ -17,6 +17,9 @@
 	.#{$namespace}tab-navigation {
 		padding:$padding;
 		margin-right:$padding;
+		a {
+			text-decoration:none;
+		}
 		@include media-breakpoint-down(sm) {
 			margin-right:0;
 		}
@@ -27,6 +30,16 @@
 			width:100px;
 			height:100px;
 			fill:#fff;
+		}
+		.#{$namespace}tab-navigation-title {
+			display:block;
+			padding:4px; 
+			margin:10px auto 0 auto;
+			text-transform:uppercase;
+			font-size:14px;
+			font-weight:800;
+			color:#fff;
+			@extend .#{$namespace}background-primary-light;
 		}
 	}
 }

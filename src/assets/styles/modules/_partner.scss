@@ -23,21 +23,21 @@
 	}
 	&-header {
 		display:flex;
-		padding:$padding;
+		min-height:60px;
+		padding:0 $padding;
 		align-items:center;
 		justify-content:center;
 	}
 	&-body {
 		&-image {
-			width:100%;
+			max-width:140px;
 		}
 		&-title {
 			display:inline-flex;
-			padding:$padding;
-			text-align:left;
+			padding:5px $padding;
 			text-transform:uppercase;
 			font-weight:500;
-			font-size:12px;
+			font-size:14px;
 			color:map-get($ui-colors, black);
 			text-decoration:none;
 			&:hover {
@@ -46,7 +46,6 @@
 		}
 	}
 	&-footer {
-		border-top:1px solid #ccc;
 		padding:$padding;
 		&-secondary {
 			display:flex;
@@ -63,7 +62,7 @@
 				text-align:left;
 				font-weight:500;
 				color:map-get($ui-colors, black);
-				font-size:11px;
+				font-size:12px;
 				text-decoration:none;
 				&:hover {
 					color:map-get($ui-colors, primary-dark);

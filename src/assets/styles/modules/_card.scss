@@ -8,6 +8,7 @@
 // *************************************
 .#{$namespace}card {
 	position:relative;
+	height:100%;
 	display:flex;
 	margin-bottom:$padding;
 	padding:$padding;

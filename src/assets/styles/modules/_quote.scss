@@ -18,11 +18,15 @@
 	background:#fff;
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+	transform:rotate(-6deg);
 	@include media-breakpoint-up(lg) {
 		margin-bottom:60px;
 	}
 	@include media-breakpoint-down(sm) {
+		margin-right:20px;
+		margin-left:20px;
 		margin-bottom:60px;
+		transform:rotate(-3deg);
 	}
 	&-icon {
 		position:absolute;

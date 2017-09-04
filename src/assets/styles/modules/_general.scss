@@ -2,6 +2,11 @@ body {
 	background:map-get($ui-colors, secondary-light);
 }
 
+.#{$namespace}background-how-it-works {
+	background:url("../images/how-it-works.jpg") no-repeat center top;
+}
+
+
 .#{$namespace}brand {
 	display:flex;
 	align-items:center;
