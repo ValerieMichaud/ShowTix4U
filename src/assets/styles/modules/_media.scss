@@ -16,7 +16,7 @@
 	display:flex;
 	align-items:stretch;
 	text-align:left;
-	margin-bottom:$padding;
+	margin-bottom:40px;
 	&-image {
 		padding-right:$padding;
 		svg {
@@ -38,5 +38,16 @@
 			}
 		}
 	}
-	
+	.#{$namespace}background-secondary-light & {
+		&-image {
+			svg {
+				fill:map-get($ui-colors, black);
+			}
+		}
+		&-content {
+			p {
+				color:map-get($ui-colors, black);
+			}
+		}
+	}
 }

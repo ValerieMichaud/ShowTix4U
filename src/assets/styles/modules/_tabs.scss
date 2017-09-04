@@ -13,33 +13,31 @@
 // Base
 // *************************************
 .#{$namespace}tabs {
-	&-navigation {
-		display:flex;
-		align-items:center;
-		@extend %bulletless;
-		li {
-			margin-right:$padding;
-			&.is-active {
-				@extend .#{$namespace}background-primary-light;
-			}
-			.#{$namespace}icon {
-				width:50px;
-				height:50px;
-				fill:#fff;
-			}
+	margin-bottom:60px;
+	.#{$namespace}tab-navigation {
+		padding:$padding;
+		margin-right:$padding;
+		@include media-breakpoint-down(sm) {
+			margin-right:0;
+		}
+		&.is-active {
+			@extend .#{$namespace}background-primary-light;
+		}
+		.#{$namespace}icon {
+			width:100px;
+			height:100px;
+			fill:#fff;
 		}
 	}
-	@include media-breakpoint-down(sm) {
-		margin-bottom:$padding;
-	}
 }
+
 .#{$namespace}tabs-content {
 	padding:$padding;
 	.#{$namespace}tab-content {
 		height:auto;
 		max-height:0;
 		overflow:hidden;
-		transition:max-height 0.5s ease-in-out;
+		xtransition:max-height 0.5s ease-in-out;
 		&.is-active {
 			max-height:2000px;
 		}

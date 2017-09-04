@@ -25,17 +25,26 @@
 		article {position:relative; z-index:1;}
 	}
 }
+.swiper-button-next {
+	right:0;
+}
+.swiper-button-prev {
+	left:0;
+}
 .swiper-button-next, .swiper-button-prev {
-	svg {width:30px; height:52px;}
+	svg {
+		width:30px; 
+		height:52px;
+		fill:map-get($ui-colors, primary);
+	}
 }
 
 
 .swiper-container {
 	.swiper-pagination {
 		bottom:auto;
-		top:0;
 		&-bullet {
-			background:map-get($ui-colors, broid-blue);
+			background:map-get($ui-colors, primary);
 		}
 	}
 }
@@ -43,31 +52,24 @@
 /*------------------------------------*\
     SPECIAL CONFIGS
 \*------------------------------------*/
-[data-config="channels"] {
-	padding-top:40px;
-	align-items:stretch;
-	.swiper-wrapper {
-		height:270px;
-	}
-	.swiper-slide-active {
-		transform:scale(1.2);
-		transition:transform 0.5s ease;
-	}
+[data-config="partners"] {
+	padding-bottom:$padding;
 }
-
-[data-config="support"] {
-	margin-top:10px;
-	padding-top:55px;
-	.swiper-wrapper {
-		height:60px;
-	}
+[data-config="upcoming"] {
+	padding-bottom:$padding;
 }
-
-[data-config="testimonials"] {
-	margin-top:40px;
-	padding-top:80px;
-	align-items:stretch;
-	.swiper-wrapper {
-		xheight:250px;
+[data-config="tabs"] {
+	.swiper-slide {
+		@include media-breakpoint-down(sm) {
+			display:flex;
+			justify-content:center;
+		}
+	}
+	.swiper-button-next, .swiper-button-prev {
+		svg {
+			width:35px; 
+			height:38px;
+			fill:#fff;
+		}
 	}
 }

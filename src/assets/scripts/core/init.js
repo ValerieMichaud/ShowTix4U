@@ -49,6 +49,9 @@ $(function(){
 		var $this = $(this),
 			$target = $($this.data('target'));
 		$this.toggleClass(MY_PROJECT_NAME.s_active);
+		if($this.parents('.showtix-tabs-navigation')){
+			$this.parents('.showtix-tabs-navigation').find('.' + MY_PROJECT_NAME.s_active).removeClass(MY_PROJECT_NAME.s_active);
+		}
 		$target.siblings().removeClass(MY_PROJECT_NAME.s_active);
 		$target.toggleClass(MY_PROJECT_NAME.s_active);
 
