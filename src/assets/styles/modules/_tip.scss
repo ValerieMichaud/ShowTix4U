@@ -39,6 +39,9 @@
 		font-size:18px;
 		font-weight:300;
 		color:#fff;
+		@include media-breakpoint-down(sm) {
+			font-size:15px;
+		}
 	}
 
 }
