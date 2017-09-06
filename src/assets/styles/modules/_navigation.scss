@@ -112,7 +112,7 @@ $ui-bar-radius: 2px;
 					border-bottom:1px solid #cccccb;
 					color:#000;
 					background:#fff;
-					&:hover {
+					&:hover, &.is-active {
 						color:map-get($ui-colors, primary);
 					}
 				}
