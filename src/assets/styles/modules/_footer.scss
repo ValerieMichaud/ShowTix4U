@@ -13,4 +13,9 @@
 			font-weight:800;
 		}
 	}
+
+	.#{$namespace}page-footer-copyright {
+		font-size:12px;
+		margin: 30px 0;
+	}
 }

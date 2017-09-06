@@ -21,7 +21,7 @@
 	background:map-get($ui-colors, secondary-dark);
 	border-radius:5px;
 	box-shadow:1px 1px 1px rgba(0,0,0,0.4);
-	transform:rotate(6deg);
+	transform:rotate(4deg);
 	@include media-breakpoint-down(sm) {
 		transform:rotate(3deg);
 		margin-right:20px;

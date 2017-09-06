@@ -16,6 +16,7 @@
 	margin-bottom:60px;
 	.#{$namespace}tab-navigation {
 		padding:$padding;
+		padding-bottom: 20px;
 		margin-right:$padding;
 		a {
 			text-decoration:none;
@@ -30,14 +31,16 @@
 			width:100px;
 			height:100px;
 			fill:#fff;
+		    display: block;
+			margin: 0 auto;
 		}
 		.#{$namespace}tab-navigation-title {
-			display:block;
-			padding:4px; 
-			margin:10px auto 0 auto;
+			display: inline-block;
+			padding:5px 10px 4px 10px;
+			margin:15px auto 0 auto;
 			text-transform:uppercase;
 			font-size:14px;
-			font-weight:800;
+			font-weight:500;
 			color:#fff;
 			@extend .#{$namespace}background-primary-light;
 		}

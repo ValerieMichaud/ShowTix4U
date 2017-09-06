@@ -4,6 +4,7 @@ body {
 
 .#{$namespace}background-how-it-works {
 	background:url("../images/how-it-works.jpg") no-repeat center top;
+	background-size: cover;
 }
 
 

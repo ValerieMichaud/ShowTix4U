@@ -45,5 +45,13 @@
 				height:20px;
 			}
 		}
+
+		&:hover {
+			background-color: #FFF;
+
+			.#{$namespace}icon {
+				fill: map-get($ui-colors, black);
+			}
+		}
 	}
 }
