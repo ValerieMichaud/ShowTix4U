@@ -66,6 +66,12 @@ a.#{$namespace}button {
 	color: #FFF;
 }
 
+.#{$namespace}button-full-2 {
+	display:flex;
+	width: 100%;
+	color: #FFF;
+}
+
 // Other
 // *************************************
 .#{$namespace}button-group {
