@@ -40,6 +40,14 @@ $(function(){
 
 	// support of onTransitionEnd
 	$.support.transition = MY_PROJECT_NAME.utils.global.transitionEnd();
+	$.fn.emulateTransitionEnd = function (duration) {
+	    var called = false
+	    var $el = this
+	    $(this).one('bsTransitionEnd', function () { called = true })
+	    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+	    setTimeout(callback, duration)
+	    return this
+	  }
 
 	// init all swipers
     doInitSwiper();

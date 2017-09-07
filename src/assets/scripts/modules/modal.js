@@ -110,10 +110,10 @@
 			}
 
 			// Height
-			if (that.options.height) {
-				var bodyheight = that.options.height - that.$header.height()
-				that.$modalbody.css('height', bodyheight)
-			}
+			//if (that.options.height) {
+			//	var bodyheight = that.options.height - that.$header.height()
+			//	that.$modalbody.css('height', bodyheight)
+			//}
 
 			// Title
 			if (that.options.title) {

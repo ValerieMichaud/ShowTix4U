@@ -9,6 +9,7 @@
 
 			img {
 				float: left;
+				max-height:100px;
 			}
 		}
 
@@ -19,13 +20,13 @@
 
     		.event_name {
     			display: block;
-			    font-size: 18px;
+			    font-size: 16px;
     		}
 
     		.venue_name {
 			    display: block;
 		        margin-top: 5px;
-    			font-size: 16px;
+    			font-size: 14px;
     		}
 		}
 	}
