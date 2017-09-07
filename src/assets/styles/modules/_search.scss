@@ -41,7 +41,8 @@
 		padding:5px 20px;
 		border:none;
 		background:#fff;
-		color:map-get($ui-colors, secondary);
+		//color:map-get($ui-colors, secondary);
+		color: #666;
 		font-weight:300;
 		font-size:18px;
 		@include media-breakpoint-down(sm) {

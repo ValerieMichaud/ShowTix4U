@@ -44,6 +44,9 @@ $(function(){
 	// init all swipers
     doInitSwiper();
 
+    // init type ahead
+    typeAhead();
+
 	// Toggle active class
 	$('.js-toggle-active').click(function(){
 		var $this = $(this),

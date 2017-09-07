@@ -1,0 +1,32 @@
+.typeahead__item {
+	>a {
+		position:relative;
+		display:flex;
+		align-items:center;
+	
+		.poster {
+			padding: 0 5px;
+
+			img {
+				float: left;
+			}
+		}
+
+		.venue {
+			padding: 0 5px;
+		    text-align: center;
+    		width: 100%;
+
+    		.event_name {
+    			display: block;
+			    font-size: 18px;
+    		}
+
+    		.venue_name {
+			    display: block;
+		        margin-top: 5px;
+    			font-size: 16px;
+    		}
+		}
+	}
+}

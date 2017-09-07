@@ -70,9 +70,20 @@
 						<div class="showtix-search">
 							<h2 class="showtix-search-title">Find a show</h2>
 							<div class="showtix-search-wrap">
-								<input class="showtix-search-input" type="search" placeholder="Search for a company, venue or event" />
-								<button class="showtix-search-button showtix-button">Search</button>
-							</div>	
+								<form id="form_event_search" name="form_event_search">
+
+									<div class="typeahead__container">
+								        <div class="typeahead__field">
+								            <span class="typeahead__query">
+								            	<input class="showtix-search-input" type="search" placeholder="Search for a company, venue or event" autocomplete="off" />
+								            </span>
+								            <span class="typeahead__button">
+								                <button class="showtix-search-button showtix-button" type="submit">Search</button>
+								            </span>
+								        </div>
+								    </div>
+								</form>
+							</div>
 						</div>		
 					</div>
 				</div>
@@ -1176,7 +1187,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="col-md-6">
 									<div class="showtix-quote">
 										<i class="showtix-quote-icon">
