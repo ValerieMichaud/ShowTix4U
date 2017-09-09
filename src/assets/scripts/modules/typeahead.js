@@ -65,7 +65,7 @@ function typeAhead() {
             onClick: function (node, a, item, event) {
      
                 // You can do a simple window.location of the item.href
-                alert(JSON.stringify(item));
+                // alert(JSON.stringify(item));
      
             },
             onSendRequest: function (node, query) {
@@ -76,5 +76,11 @@ function typeAhead() {
             }
         },
         debug: true
+    });
+
+    // Form submit
+    $('#form_event_search').submit(function(ev) {
+        ev.preventDefault(); // to stop the form from submitting
+        window.location.href = "https://www.showtix4u.com/?query_search=" + $("#showtix-search-input").val();
     });
 }

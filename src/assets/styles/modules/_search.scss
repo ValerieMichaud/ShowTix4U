@@ -44,15 +44,12 @@
 		//color:map-get($ui-colors, secondary);
 		color: #666;
 		font-weight:300;
-		font-size:18px;
+		font-size:22px;
 		@include media-breakpoint-down(sm) {
 			font-size:15px;
 		}
 	}
 	&-button {
-		position:absolute;
-		top:0;
-		right:0;
 		height:50px;
 		background:map-get($ui-colors, primary-medium);
 		color:#fff;
