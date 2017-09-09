@@ -37,7 +37,7 @@
 	&-input {
 		box-sizing:border-box !important;
 		width:100%;
-		height:50px;
+		height:56px;
 		padding:5px 20px;
 		border:none;
 		background:#fff;
@@ -45,21 +45,36 @@
 		color: #666;
 		font-weight:300;
 		font-size:22px;
+
+		@include media-breakpoint-down(md) {
+			font-size:20px;
+			height:50px;
+		}
+
 		@include media-breakpoint-down(sm) {
 			font-size:15px;
+			height:50px;
 		}
 	}
 	&-button {
-		height:50px;
+		height:56px;
 		background:map-get($ui-colors, primary-medium);
 		color:#fff;
-		font-size:16px;
+		font-size:18px;
+		padding: 0 45px;
+
+		@include media-breakpoint-down(md) {
+			font-size:16px;
+			height:50px;
+		}
+
 		@include media-breakpoint-down(sm) {
 			position:relative;
 			display:block;
 			top:auto;
 			right:auto;
-			margin:10px auto 0 auto;
+			margin:0 auto 0 auto;
+			height:50px;
 		}
 	}
 }

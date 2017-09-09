@@ -11,6 +11,11 @@
 	padding-right:120px;
 	background:url('../images/banner.jpg') no-repeat top center;
 	background-size:cover;
+
+	@include media-breakpoint-down(md) {
+		padding: 70px 50px 40px;
+	}
+
 	@include media-breakpoint-down(sm) {
 		padding:70px 20px 20px 20px;
 	}

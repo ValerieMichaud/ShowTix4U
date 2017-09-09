@@ -48,6 +48,13 @@ $button-vp: 40px !default; // Top/Bottom paddings
 			color:#fff;
 		}
 	}
+
+	@include media-breakpoint-down(xs) {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding:16px 30px;
+	}
 }
 
 a.#{$namespace}button {

@@ -31,3 +31,20 @@
 		}
 	}
 }
+
+.typeahead__query {
+	@include media-breakpoint-down(md) {
+		display: block !important;
+	}
+}
+
+.typeahead__button {
+	@include media-breakpoint-down(md) {
+		display: block !important;
+
+		.showtix-search-button {
+			display: block !important;
+			width: 100%;
+		}
+	}
+}

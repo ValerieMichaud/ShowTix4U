@@ -15,10 +15,17 @@ body {
 	svg {
 		filter: drop-shadow(1px 1px 7px rgba(#000,0.6));
 	}
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		svg {
 			width:200px;
 			height:100px;
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		svg {
+			width:140px;
+			height:80px;
 		}
 	}
 }

@@ -51,6 +51,8 @@
 		bottom:auto;
 		&-bullet {
 			background:map-get($ui-colors, primary);
+			width: 12px;
+			height: 12px;
 		}
 	}
 }

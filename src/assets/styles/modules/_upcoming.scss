@@ -24,10 +24,11 @@
 	&-title {
 		font-weight:800;
 		color:map-get($ui-colors, secondary-dark);
-		font-size:11px;
+		font-size:14px;
 		text-decoration:none;
 		text-transform:uppercase;
 		span {
+			font-size:12px;
 			display:block;
 			font-weight:500;
 			text-transform:none;

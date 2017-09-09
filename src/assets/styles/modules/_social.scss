@@ -38,8 +38,8 @@
 			fill:#fff;
 		}
 		@include media-breakpoint-down(sm) {
-			width:35px;
-			height:35px;
+			width:45px;
+			height:45px;
 			.#{$namespace}icon {
 				width:20px;
 				height:20px;

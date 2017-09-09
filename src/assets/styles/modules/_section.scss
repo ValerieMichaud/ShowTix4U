@@ -19,19 +19,22 @@
 		color:#fff;
 		font-weight:300;
 		.#{$namespace}background-secondary-light & {
-			color:map-get($ui-colors, black);
+			color:map-get($ui-colors, secondary-medium);
+			text-shadow: 0px 0px 1px #fff;
 		}
 		@include media-breakpoint-down(sm) {
 			font-size:22px;
 		}
 	}
 	&-intro {
-		margin:0 0 (2*$padding) 0;
+		margin: 0 0 20px 0;
 		font-size:18px;
 		color:#fff;
 		font-weight:300;
+
 		@include media-breakpoint-down(sm) {
 			font-size:14px;
+			margin:0 0 (2*$padding) 0;
 		}
 	}
 	&-number {

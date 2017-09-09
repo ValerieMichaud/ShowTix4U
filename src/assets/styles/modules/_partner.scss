@@ -31,11 +31,12 @@
 	}
 	&-body {
 		&-image {
-			max-width:140px;
+			max-height: 80px;
+			max-width: 100%;
 		}
 		&-title {
 			display:inline-flex;
-			padding:5px $padding;
+			padding:10px $padding 5px $padding;
 			text-transform:uppercase;
 			font-weight:500;
 			font-size:14px;
@@ -67,6 +68,14 @@
 				text-decoration:none;
 				&:hover {
 					color:map-get($ui-colors, primary-dark);
+				}
+
+				@include media-breakpoint-down(md) {
+					flex-shrink: 6;
+				}
+
+				@include media-breakpoint-down(lg) {
+					flex-shrink: 6;
 				}
 			}
 			&:last-child {
