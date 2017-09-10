@@ -55,6 +55,9 @@ $(function(){
     // init type ahead
     typeAhead();
 
+	// init the scroll handler
+	initScroll();
+
 	// Toggle active class
 	$('.js-toggle-active').click(function(){
 		var $this = $(this),
