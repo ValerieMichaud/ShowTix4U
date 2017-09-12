@@ -50,10 +50,17 @@ $button-vp: 40px !default; // Top/Bottom paddings
 	}
 
 	@include media-breakpoint-down(xs) {
-		display: block;
+		display: flex;
 		margin-left: auto;
 		margin-right: auto;
 		padding:16px 30px;
+	}
+
+	.#{$namespace}icon-right-chevron {
+		width:20px;
+		height:20px;
+		margin-left:10px;
+		fill:map-get($ui-colors, primary-medium);
 	}
 
 	.#{$namespace}icon-up-chevron {
@@ -81,10 +88,16 @@ a.#{$namespace}button {
 .#{$namespace}button-full {
 	display:flex;
 	width: 100%;
-	background-color: #2e3668;
+	background-color:#2e3668;
 	color: #FFF;
 	&.#{$namespace}button-show {
 		justify-content:space-between;
+	}
+	.#{$namespace}background-primary-dark & {
+		background-color:map-get($ui-colors, primary-light);
+	}
+	.#{$namespace}icon-right-chevron {
+		fill:#fff;
 	}
 }
 
