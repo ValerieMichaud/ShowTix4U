@@ -53,7 +53,7 @@ $(function(){
     doInitSwiper();
 
     // init type ahead
-    typeAhead();
+    //typeAhead();
 
 	// init the scroll handler
 	initScroll();
@@ -71,7 +71,8 @@ $(function(){
 
 		// Change label
 		if($this.data('active')){
-			$target.hasClass(MY_PROJECT_NAME.s_active) ? $this.text($this.data('active')) : $this.text($this.data('start'))
+			$target.hasClass(MY_PROJECT_NAME.s_active) ? $this.addClass(MY_PROJECT_NAME.s_active) : $this.removeClass(MY_PROJECT_NAME.s_active);
+			$target.hasClass(MY_PROJECT_NAME.s_active) ? $this.find("span").text($this.data('active')) : $this.find("span").text($this.data('start'));
 		}
 
 		return false;
@@ -92,7 +93,10 @@ $(function(){
 
 	$('.js-anchor').click(function(){
 		var anchor = $(this).data('anchor'),
-			anchorTop = $('[data-anchor-id="' + anchor + '"]').position().top;
+			anchorTop = $('[data-anchor-id="' + anchor + '"]').offset().top;
+			console.log(anchor);
+			console.log(anchorTop);
+
 		$('html, body').animate({
 	        scrollTop: anchorTop - 25
 	    }, 500);

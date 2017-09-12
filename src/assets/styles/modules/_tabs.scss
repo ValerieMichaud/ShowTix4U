@@ -16,6 +16,7 @@
 	margin-bottom:60px;
 	.#{$namespace}tab-navigation {
 		padding:$padding;
+		min-width:200px;
 		padding-bottom: 25px;
 		margin-right:$padding;
 		a {

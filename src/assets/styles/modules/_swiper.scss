@@ -80,4 +80,12 @@
 			fill:#fff;
 		}
 	}
+	.swiper-pagination {
+		bottom:0px;
+		&-bullet {
+			background:#fff;
+			width:8px;
+			height:8px;
+		}
+	}
 }

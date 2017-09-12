@@ -60,30 +60,31 @@
 
 				<!-- Start : BANNER -->
 				<div class="showtix-banner">
-					<div class="showtix-page-wrap d-flex flex-column flex-md-row">
-						<div class="showtix-brand">
-							<svg class="showtix-icon showtix-icon-logo">
-						    	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
-						    </svg>
-						</div>
-						
-						<div class="showtix-search">
-							<h2 class="showtix-search-title">Find a show</h2>
-							<div class="showtix-search-wrap">
-								<form id="form_event_search" name="form_event_search">
-
-									<div class="typeahead__container">
-								        <div class="typeahead__field">
-								            <span class="typeahead__query">
-								            	<input class="showtix-search-input" id="showtix-search-input" type="search" placeholder="Search for a company, venue or event" autocomplete="off" />
-								            </span>
-								            <span class="typeahead__button">
-								                <button class="showtix-search-button showtix-button" type="submit">Search</button>
-								            </span>
-								        </div>
-								    </div>
-								</form>
+					<div class="showtix-page-wrap">
+						<div class="row">
+							<div class="col-sm-12 col-md-4 showtix-brand">
+								<svg class="showtix-icon showtix-icon-logo">
+							    	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+							    </svg>
 							</div>
+							
+							<div class="col-sm-12 col-md-8 showtix-search">
+								<form id="form_event_search" name="form_event_search">
+									<label class="showtix-search-title" for="showtix-search-input">Find a show</label>
+									<div class="showtix-search-wrap">
+										<div class="typeahead__container">
+									        <div class="typeahead__field">
+									            <span class="typeahead__query">
+									            	<input class="showtix-search-input" id="showtix-search-input" name="showtix-search-input" type="search" placeholder="Search for a company, venue or event" autocomplete="off" />
+									            </span>
+									            <span class="typeahead__button">
+									                <button class="showtix-search-button showtix-button" type="submit">Search</button>
+									            </span>
+									        </div>
+									    </div>
+									</div>
+								</form>	
+							</div>	
 						</div>		
 					</div>
 				</div>
@@ -426,6 +427,7 @@
 												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-right-chevron"></use>
 											</svg>
 										</div>
+										<div class="swiper-pagination swiper-pagination-tabs showtix-hide-up-md"></div>
 									</div>
 									<div class="showtix-tabs-content showtix-background-primary-light">
 										<div class="showtix-tab-content js-tab-1 is-active">
@@ -911,7 +913,15 @@
 												</div>
 											</div>
 										</div>
-										<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full js-toggle-active" href="#" data-target=".js-showtix-mask-2" data-start="Show all tips" data-active="Hide all tips">Show all tips</a>
+										<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full showtix-button-show js-toggle-active" href="#" data-target=".js-showtix-mask-2" data-start="Show more" data-active="Show less" title="Click here to show more or less content.">
+											<svg class="showtix-icon showtix-icon-up-chevron">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+											</svg>
+											<span>Show more</span>
+											<svg class="showtix-icon showtix-icon-up-chevron">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+											</svg>
+										</a>
 									</div>
 								</div>
 								<div class="row">
@@ -1121,7 +1131,15 @@
 												</div>
 											</div>
 										</div>
-										<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full js-toggle-active" href="#" data-target=".js-showtix-mask-3" data-start="Show all tips" data-active="Hide all tips">Show all tips</a>
+										<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full showtix-button-show js-toggle-active" href="#" data-target=".js-showtix-mask-3" data-start="Show more" data-active="Show less" title="Click here to show more or less content.">
+											<svg class="showtix-icon showtix-icon-up-chevron">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+											</svg>
+											<span>Show more</span>
+											<svg class="showtix-icon showtix-icon-up-chevron">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+											</svg>
+										</a>
 									</div>
 								</div>
 								<div class="row">
@@ -1385,7 +1403,15 @@ All other shows, per ticket fee is 50¢ + 3.5%, just 5¢ more.</p>
 											</div>
 										</div>
 									</div>	
-									<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full js-toggle-active" href="#" data-target=".js-showtix-mask-4" data-start="Show all tips" data-active="Hide all tips">Show all tips</a>
+									<a class="showtix-to-margin-top-30 showtix-to-margin-bottom-60 showtix-hide-up-lg showtix-button showtix-button-secondary showtix-button-uppercase showtix-button-full showtix-button-show js-toggle-active" href="#" data-target=".js-showtix-mask-4" data-start="Show more" data-active="Show less" title="Click here to show more or less content.">
+										<svg class="showtix-icon showtix-icon-up-chevron">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+										</svg>
+										<span>Show more</span>
+										<svg class="showtix-icon showtix-icon-up-chevron">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up-chevron"></use>
+										</svg>
+									</a>
 
 									<a class="showtix-button showtix-button-full" href="pdf/Pricing.Full_Pricing.pdf" target="_blank">Full pricing guide</a>
 								</div>
@@ -1404,15 +1430,15 @@ All other shows, per ticket fee is 50¢ + 3.5%, just 5¢ more.</p>
 										    </svg>
 										</i>
 										<div class="showtix-padder showtix-to-align-center">
-											<p>I'm so happy I was referred to you. I needed to start selling tickets immediately for a fundraiser event and within 10 minutes, I had my first ticket sale! I'm forever your client!</p>
-											<p class="showtix-quote-person">&mdash; Jen Hemme, Green Valley High School</p>
+											<p>Thank you ShowTix4U! This fabulous program has saved me from dealing with long lines on the day of the show!</p>
+											<p class="showtix-quote-person">&mdash; Sharon Chadwick, EdTA Nevada State Chapter Director</p>
 										</div>
 									</div>
 								</div>	
 								<div class="col-md-6">
 									<div class="showtix-tip">
 										<div class="showtix-padder showtix-to-align-right">
-											<p>Organizations find that, after switching to online ticketing, they have an increase in sales and patrons purchase earlier, allowing for funds to be available sooner.</p>
+											<p>Don’t be fooled by other ticketing companies with higher flat rate fees that promote free equipment. This simply means if your ticket price is low, you are paying MORE per ticket in fees. Nothing in life is free and higher priced fees “pay” for “free” equipment year after year.</p>
 										</div>
 										<i class="showtix-tip-icon">
 											<svg class="showtix-icon showtix-icon-exclamation">
@@ -1443,12 +1469,13 @@ All other shows, per ticket fee is 50¢ + 3.5%, just 5¢ more.</p>
 										        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shield"></use>
 										    </svg>
 										</div>
-										<div class="col-sm-8 showtix-to-align-center showtix-to-align-left-up-sm d-flex align-items-center">
-											<p class="showtix-section-intro showtix-no-margin-bottom">ShowTix4U uses SSL encryption.<br />
-												ShowTix4U does not store credit card numbers.<br />
-												ShowTix4U is PCI compliant.<br />
-												ShowTix4U’s credit card processor has PCI level 1 certification, the highest level of certification available from the Payment Card Industry.
-												</p>
+										<div class="col-sm-8 showtix-to-align-left">
+											<ul class="showtix-section-intro showtix-no-margin-bottom">
+												<li>ShowTix4U uses SSL encryption.</li>
+												<li>ShowTix4U does not store credit card numbers.</li>
+												<li>ShowTix4U is PCI compliant.</li>
+												<li>ShowTix4U’s credit card processor has PCI level 1 certification, the highest level of certification available from the Payment Card Industry.</li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -1522,9 +1549,9 @@ All other shows, per ticket fee is 50¢ + 3.5%, just 5¢ more.</p>
 								</div>
 								<div class="col-sm-6 col-md-3">
 									<p><strong>Call us</strong><br />
-									Toll Free: 866-967- 8167<br />
-									Local: 702-989- 8987<br />
-									Fax: 702-430- 1050</p>
+									Toll Free: <a href="tel:18669678167">866-967-8167</a><br />
+									Local: <a href="tel:17029898987">702-989-8987</a><br />
+									Fax: <a href="tel:17024301050">702-430-1050</a></p>
 								</div>
 								<div class="col-sm-6 col-md-3">
 									<p><strong>Email</strong><br />

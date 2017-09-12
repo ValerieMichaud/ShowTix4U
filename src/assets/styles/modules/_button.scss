@@ -55,6 +55,18 @@ $button-vp: 40px !default; // Top/Bottom paddings
 		margin-right: auto;
 		padding:16px 30px;
 	}
+
+	.#{$namespace}icon-up-chevron {
+		width:20px;
+		height:20px;
+		fill:#fff;
+		transform:rotate(-180deg);
+	}
+	&.is-active {
+		.#{$namespace}icon-up-chevron {
+			transform:rotate(0);
+		}
+	}
 }
 
 a.#{$namespace}button {
@@ -71,6 +83,9 @@ a.#{$namespace}button {
 	width: 100%;
 	background-color: #2e3668;
 	color: #FFF;
+	&.#{$namespace}button-show {
+		justify-content:space-between;
+	}
 }
 
 .#{$namespace}button-full-2 {

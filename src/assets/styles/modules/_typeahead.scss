@@ -33,13 +33,13 @@
 }
 
 .typeahead__query {
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(sm) {
 		display: block !important;
 	}
 }
 
 .typeahead__button {
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(sm) {
 		display: block !important;
 
 		.showtix-search-button {

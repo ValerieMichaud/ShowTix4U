@@ -18,7 +18,8 @@
 	flex-direction:column;
 	flex:1;
 	@include media-breakpoint-down(sm) {
-		align-items:center;
+		padding-top:10px;
+		text-align:center;
 	}
 	&-title {
 		color:#fff;

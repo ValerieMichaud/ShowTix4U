@@ -101,6 +101,9 @@ MY_PROJECT_NAME.o_swiper = {
 			direction: 'horizontal',
 			slidesPerView: 4,
         	simulateTouch: false,
+        	pagination: '.swiper-pagination-tabs',
+			nextButton: '.swiper-button-next-tabs',
+			prevButton: '.swiper-button-prev-tabs',
         	breakpoints: {
 				767: {
 					slidesPerView: 1
