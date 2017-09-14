@@ -53,7 +53,7 @@ $(function(){
     doInitSwiper();
 
     // init type ahead
-    //typeAhead();
+    typeAhead();
 
 	// init the scroll handler
 	initScroll();
