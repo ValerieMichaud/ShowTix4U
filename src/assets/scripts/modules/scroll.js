@@ -21,6 +21,9 @@ function initScroll() {
                 var windowHeight = $(window).height();
                 var docHeight = $(document).height();
 
+                
+                
+
                 for (var i=0; i < aArray.length; i++) {
                     var theID = aArray[i];
                     var div = $("[data-anchor-id='" + theID + "']");
@@ -28,17 +31,17 @@ function initScroll() {
                     var divHeight = div.height();
 
                     if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-                        $("a[data-anchor='" + theID + "']").addClass("is-active");
+                        $("a[data-anchor='" + theID + "']").addClass(MY_PROJECT_NAME.s_active);
                     } else {
-                        $("a[data-anchor='" + theID + "']").removeClass("is-active");
+                        $("a[data-anchor='" + theID + "']").removeClass(MY_PROJECT_NAME.s_active);
                     }
                 }
 
                 if(windowPos + windowHeight == docHeight) {
-                    if (!$(".showtix-navigation").find("li.contact a").hasClass("is-active")) {
+                    if (!$(".showtix-navigation").find("li.contact a").hasClass(MY_PROJECT_NAME.s_active)) {
                         var navActiveCurrent = $(".nav-active").attr('data-anchor');
-                        $("[data-anchor-id='" + navActiveCurrent + "']").removeClass("is-active");
-                        $(".showtix-navigation").find("li.contact a").addClass("is-active");
+                        $("[data-anchor-id='" + navActiveCurrent + "']").removeClass(MY_PROJECT_NAME.s_active);
+                        $(".showtix-navigation").find("li.contact a").addClass(MY_PROJECT_NAME.s_active);
                     }
                 }
                 scrollScript.scrollTimeout = null;

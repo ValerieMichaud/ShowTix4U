@@ -94,8 +94,6 @@ $(function(){
 	$('.js-anchor').click(function(){
 		var anchor = $(this).data('anchor'),
 			anchorTop = $('[data-anchor-id="' + anchor + '"]').offset().top;
-			console.log(anchor);
-			console.log(anchorTop);
 
 		$('html, body').animate({
 	        scrollTop: anchorTop - 25
