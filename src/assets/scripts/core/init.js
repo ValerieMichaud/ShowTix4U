@@ -58,6 +58,17 @@ $(function(){
 	// init the scroll handler
 	initScroll();
 
+	// analytics
+	$('.js-partner-click').click(function(){
+		var $this = $(this),
+			title = $this.data('analytics-title'),
+			partner = $this.data('analytics-partner')
+		gtag('event', 'partner_click', {
+			'title': title,
+			'partner': partner
+		});
+	})
+
 	// Toggle active class
 	$('.js-toggle-active').click(function(){
 		var $this = $(this),
