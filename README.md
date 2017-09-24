@@ -1,16 +1,12 @@
-## ES6 Babel Browserify Boilerplate
+## ShowTix4U front-end package
 
-This is an boilerplate repo to make it easy to experiment with [ES6]. It's inspired by [es6-browserify-boilerplate](https://github.com/thoughtram/es6-browserify-boilerplate) but uses babel (formerly 6to5) for transpilation which does not depend on any runtime.
+This is the front-end package for the ShowTix4U redesign.
 
 
 ### Initial setup
 
 ```bash
-# Clone the repo...
-git clone https://github.com/thoughtram/es6-6to5-browserify-boilerplate.git
-cd es6-6to5-browserify-boilerplate
-
-# Then, you need to install all the dependencies...
+# Install all the dependencies...
 npm install
 
 # If you wanna be able to use global commands `karma` and `gulp`...
@@ -19,20 +15,29 @@ npm install -g gulp
 
 ### Running in the browser
 ```bash
-gulp build
 gulp serve
 
 # If you wanna Gulp to re-build on every change...
 gulp watch
 ```
 
+### Running in the browser
+```bash
+# If you wanna deploy everything...
+gulp web-deploy
 
-### WTF is ES6?
-Simply, the next version of JavaScript that contains some really cool features. You might check out some of these:
+# If you wanna deploy only the css files...
+gulp css
 
-- https://wiki.mozilla.org/ES6_plans
-- http://globaldev.co.uk/2013/09/es6-part-1/
-- http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175
+# If you wanna deploy only the js files...
+gulp js
+
+# If you wanna deploy only the svg files...
+gulp svg
+
+# If you wanna deploy only the image files...
+gulp images
+```
 
 
 ### What are all the pieces involved?
@@ -44,7 +49,10 @@ Transpiles ES6 code into regular ES5 (today's JavaScript) so that it can be run 
 Babel is configured to transpile ES6 modules into CommonJS syntax and we use browserify to bundle the code into one file to deliver it to the browser.
 
 #### [Browserify]
-Browserify walks through all files and traces down all `require()`s to bundle all files together.  
+Browserify walks through all files and traces down all `require()`s to bundle all files together.
+
+#### [Sass]
+Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
 #### [Gulp]
 Task runner to make defining and running the tasks simpler.
@@ -53,5 +61,6 @@ Task runner to make defining and running the tasks simpler.
 [Babel]: http://babeljs.io/
 [CommonJS]: http://wiki.commonjs.org/wiki/CommonJS
 [Browserify]: http://browserify.org/
+[Sass]: http://sass-lang.com/
 [Gulp]: http://gulpjs.com/
 
