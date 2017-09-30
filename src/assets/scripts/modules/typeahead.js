@@ -83,4 +83,9 @@ function typeAhead() {
         ev.preventDefault(); // to stop the form from submitting
         window.location.href = "https://www.showtix4u.com/?query_search=" + $("#showtix-search-input").val();
     });
+
+    // Disable search button
+    $('.showtix-search-button').on("click",function(e){
+        e.preventDefault();
+    });
 }
